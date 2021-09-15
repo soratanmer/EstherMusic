@@ -1,0 +1,45 @@
+{
+    "parser": "vue-eslint-parser",
+    "root": true,
+    "env": {
+        "node": true,
+        "es6": true,
+        "browser": true
+    },
+    "globals": {
+        "Markdown": true
+    },
+    "extends": [
+        "plugin:vue/vue3-recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:vue/recommended",
+        "plugin:prettier/recommended"
+    ],
+
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^h$",
+                "varsIgnorePattern": "^h$"
+            }
+        ],
+        "space-before-function-paren": "off",
+        "quotes": ["error", "single"],
+        "comma-dangle": ["error", "never"],
+        "vue/require-default-prop": "off",
+        "vue/custom-event-name-casing": "off",
+        "no-use-before-define": "off",
+        "vue/comment-directive": "off",
+        "vue/singleline-html-element-content-newline": "off",
+        "vue/max-attributes-per-line": "off",
+        "vue/html-self-closing": "error"
+    }
+}
