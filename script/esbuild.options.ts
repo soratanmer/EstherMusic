@@ -26,6 +26,12 @@ export function createOptions(): BuildOptions {
                 tsconfig: join(__dirname, '../tsconfig.main.json'),
             }),
         ],
-        external: [...builtinModules.filter((x) => !/^_|^(internal|v8|node-inspect)\/|\//.test(x)), 'electron'],
+        external: [
+            ...builtinModules.filter((x) => !/^_|^(internal|v8|node-inspect)\/|\//.test(x)),
+            'electron',
+            'express',
+            'express-http-proxy',
+            'express-fileupload',
+        ],
     }
 }
