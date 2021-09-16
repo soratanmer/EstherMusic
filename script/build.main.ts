@@ -23,7 +23,7 @@ const runApp = () => {
 if (argv.watch) {
     waitOn(
         {
-            resources: [`http://localhost:${process.env.PORT}/index.html`],
+            resources: [`http://localhost:${process.env.DEV_SERVER_PORT}/index.html`],
             timeout: 5000,
         },
         (err: any) => {

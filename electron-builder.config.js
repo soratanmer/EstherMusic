@@ -7,7 +7,7 @@ const config = {
     productName: 'EstherMusic',
     copyright: 'Copyright © 2021 EstherMusic',
     asar: true,
-    files: ['dist/main/**/*', 'dist/render/**/*'],
+    files: ['dist/main/**/*', 'dist/render/**/*', 'public/**/*'],
     directories: {
         output: 'release/${version}',
     },
