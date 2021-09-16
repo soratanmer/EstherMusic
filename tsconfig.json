@@ -11,32 +11,17 @@
         "noImplicitAny": false,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
+        "allowJs": true,
         "baseUrl": ".",
-        "lib": [
-            "esnext",
-            "dom"
-        ],
-        "types": [
-            "vite/client"
-        ],
+        "lib": ["esnext", "dom"],
+        "types": ["vite/client"],
         "paths": {
-            "@render/*": [
-                "src/render/*"
-            ],
-            "@main/*": [
-                "src/main/*"
-            ],
-            "@common/*": [
-                "src/common/*"
-            ],
+            "@render/*": ["src/render/*"],
+            "@main/*": ["src/main/*"],
+            "@common/*": ["src/common/*"]
         }
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.d.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue"
-    ],
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"

@@ -110,7 +110,6 @@ const createWindow = () => {
             window.webContents.openDevTools()
         }
     } else {
-        // window.loadURL(`file://${path.resolve(app.getAppPath(), 'dist/render/index.html')}`)
         window.loadURL(showLibraryDefault ? 'http://localhost:27232/#/library' : 'http://localhost:27232')
     }
 }

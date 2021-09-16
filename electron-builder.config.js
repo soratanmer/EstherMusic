@@ -25,7 +25,7 @@ const config = {
             },
         ],
         artifactName: '${productName}_${version}_${os}_${arch}.${ext}',
-        icon: 'build/icons/icon.ico',
+        icon: 'public/icons/icon.ico',
     },
     nsis: {
         oneClick: false,
