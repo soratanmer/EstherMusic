@@ -4,7 +4,7 @@ import Store from 'electron-store'
 import express from 'express'
 import expressProxy from 'express-http-proxy'
 
-import { startNeteaseMusicApi } from '@main/server/services'
+import { startNeteaseMusicApi } from '@main/services'
 import { initIpcMain } from '@main/ipcMain'
 import { createMenu } from '@main/menu'
 import { createThumbar } from '@main/thumbar'
@@ -261,7 +261,7 @@ const init = () => {
     }
 
     // Start netease music api
-    // startNeteaseMusicApi()
+    startNeteaseMusicApi()
 
     // create Express App
     createExpressApp()

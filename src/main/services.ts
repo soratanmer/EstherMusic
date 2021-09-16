@@ -1,16 +1,18 @@
 import express from 'express'
 import fileUpload from 'express-fileupload'
 
-const request = require('NeteaseCloudMusicApi/util/request')
-const cache = require('NeteaseCloudMusicApi/util/apicache').middleware
-const { cookieToJson } = require('NeteaseCloudMusicApi/util/index')
-const modules = require('NeteaseCloudMusicApi/main')
+import request from 'NeteaseCloudMusicApi/util/request'
+import modules from 'NeteaseCloudMusicApi/main'
+import { cookieToJson } from 'NeteaseCloudMusicApi/util/index'
+import apicache from 'NeteaseCloudMusicApi/util/apicache'
+
+const cache = apicache.middleware
 
 export function startNeteaseMusicApi() {
     console.log('startNeteaseMusicApi')
 
     // Integrate API
-    const app = express()
+    const app: express = express()
     // CORS & Preflight request
     app.use((req, res, next) => {
         if (req.path !== '/' && !req.path.includes('.')) {

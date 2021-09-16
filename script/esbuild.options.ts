@@ -27,11 +27,12 @@ export function createOptions(): BuildOptions {
             }),
         ],
         external: [
-            ...builtinModules.filter((x) => !/^_|^(internal|v8|node-inspect)\/|\//.test(x)),
+            ...builtinModules,
             'electron',
             'express',
             'express-http-proxy',
             'express-fileupload',
+            'NeteaseCloudMusicApi',
         ],
     }
 }
