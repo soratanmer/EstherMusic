@@ -1,9 +1,9 @@
 <template>
     <div class="login">
         <div class="section-1">
-            <img src="/logos/EstherMusic.png" >
+            <img src="/logos/EstherMusic.png" />
             <svg-icon icon-name="x" />
-            <img src="/logos/netease-music.png" >
+            <img src="/logos/netease-music.png" />
         </div>
         <div class="section-2">
             <div class="card" @mouseover="activeCard = 1" @mouseleave="activeCard = 0" @click="goTo('account')">
@@ -15,14 +15,13 @@
                     <svg-icon icon-name="arrow-right" />
                 </div>
             </div>
-            <div class="card" @mouseover="activeCard = 2" @mouseleave="activeCard = 0" @click="goTo('username')"/>
-                <div class="container" :class="{ active: activeCard === 2 }">
-                    <div class="title-info">
-                        <div class="title">{{ $t('login.search') }}</div>
-                        <div class="info">{{ $t('login.readonly') }}</div>
-                    </div>
-                    <svg-icon icon-name="arrow-right" />
+            <div class="card" @mouseover="activeCard = 2" @mouseleave="activeCard = 0" @click="goTo('username')" />
+            <div class="container" :class="{ active: activeCard === 2 }">
+                <div class="title-info">
+                    <div class="title">{{ $t('login.search') }}</div>
+                    <div class="info">{{ $t('login.readonly') }}</div>
                 </div>
+                <svg-icon icon-name="arrow-right" />
             </div>
         </div>
     </div>

@@ -8,8 +8,8 @@ export function createTray(win) {
         return nativeImage.createFromPath(path.join(__dirname, '../../public/tray/', name))
     }
 
-    let icon = getNativeIcon('menu.png')
-    let tray = new Tray(icon)
+    const icon = getNativeIcon('menu.png')
+    const tray = new Tray(icon)
 
     tray.setToolTip('EstherMusic')
 
