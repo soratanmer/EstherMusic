@@ -9,7 +9,6 @@ import { initIpcMain } from '@main/ipcMain'
 import { createMenu } from '@main/menu'
 import { createThumbar } from '@main/thumbar'
 import { createTouchBar } from '@main/touchBar'
-import { createTray } from '@main/tray'
 import { createDockMenu } from '@main/dockMenu'
 import { registerGlobalShortcut } from '@main/globalShortcut'
 
@@ -46,7 +45,7 @@ const createExpressApp = () => {
     expressApp.use('/api', expressProxy('http://127.0.0.1:3000'))
     expressApp.use('/player', (req, res) => {
         window.webContents
-            .executeJavaScript('window.Fiesta.player')
+            .executeJavaScript('window.EstherMusic.player')
             .then((result) => {
                 res.send({
                     currentTrack: result._isPersonalFM ? result._personalFMTrack : result._currentTrack,
@@ -73,7 +72,7 @@ const createWindow = () => {
         minHeight: 720,
         titleBarStyle: 'hiddenInset',
         frame: process.platform !== 'win32',
-        title: 'Fiesta',
+        title: 'EstherMusic',
         icon: getNativeIcon('icon.png'),
         show: false,
         webPreferences: {
@@ -156,7 +155,7 @@ const handleWindowEvents = () => {
                 width: 800,
                 height: 600,
                 titleBarStyle: 'default',
-                title: 'Fiesta',
+                title: 'EstherMusic',
                 icon: getNativeIcon('icon.png'),
                 webPreferences: {
                     webSecurity: false,
@@ -211,8 +210,6 @@ const handleAppEvents = () => {
         window.setTouchBar(createTouchBar(window))
 
         createThumbar(window)
-
-        createTray(window)
 
         // register global shortcuts
         if (store.get('settings.enableGlobalShortcut')) {
