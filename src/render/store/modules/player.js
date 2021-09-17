@@ -193,7 +193,7 @@ const mutations = {
 }
 
 const actions = {
-    initPlayer({ state, dispatch }) {
+    initPlayer({ state, commit, dispatch }) {
         Howler.autoUnlock = false
         Howler.usingWebAudio = true
         Howler.volume(state.volume)
@@ -204,6 +204,14 @@ const actions = {
                 state.howler?.seek(localStorage.getItem('playerCurrentTrackTime') ?? 0)
             })
             dispatch('initMediaSession')
+        }
+
+        // 初始化私人FM
+        if (state.personalFMTrack.id === 0 || state.personalFMNextTrack.id === 0) {
+            personalFM().then((result) => {
+                commit('setPersonalFMTrack', result.data[0])
+                commit('setPersonalFMNextTrack', result.data[0])
+            })
         }
     },
     sendSelfToIpcMain({ state, rootState }) {

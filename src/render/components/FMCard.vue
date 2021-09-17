@@ -1,6 +1,6 @@
 <template>
     <div class="fm" data-theme="dark">
-        <img :src="albumPic" />
+        <img :src="proxy.$filters.resizeImage(albumPic)" />
         <div class="container">
             <div class="info">
                 <div class="title">{{ personalFMTrack.name }}</div>
@@ -27,11 +27,9 @@
 </template>
 
 <script>
-    import { computed, ref, watch, getCurrentInstance } from 'vue'
+    import { computed, getCurrentInstance } from 'vue'
     import { useStore } from 'vuex'
     import { useRouter } from 'vue-router'
-
-    import { personalFM } from '@render/NeteastApi/others'
 
     import ArtistsInLine from '@render/components/ArtistsInLine.vue'
     import ButtonIcon from '@render/components/ButtonIcon.vue'
@@ -49,27 +47,18 @@
             const store = useStore()
             const { proxy } = getCurrentInstance()
 
-            const album = ref()
-            const albumPic = ref('')
-
             const player = computed(() => store.state.player)
 
-            const personalFMTrack = computed({
-                get() {
-                    return player.value.personalFMTrack
-                },
-                set(value) {
-                    store.commit('player/setPersonalFMTrack', value)
-                },
+            const personalFMTrack = computed(() => {
+                return player.value.personalFMTrack
             })
 
-            const personalFMNextTrack = computed({
-                get() {
-                    return player.value.personalFMNextTrack
-                },
-                set(value) {
-                    store.commit('player/setPersonalFMNextTrack', value)
-                },
+            const album = computed(() => {
+                return personalFMTrack.value.album
+            })
+
+            const albumPic = computed(() => {
+                return personalFMTrack.value.album?.picUrl
             })
 
             const artists = computed(() => {
@@ -79,15 +68,6 @@
             const isPlaying = computed(() => {
                 return player.value.playing && player.value.isPersonalFM
             })
-
-            const init = () => {
-                personalFM().then((result) => {
-                    personalFMTrack.value = result.data[0]
-                    personalFMNextTrack.value = result.data[1]
-                    album.value = result.data[0].album
-                    albumPic.value = proxy.$filters.resizeImage(result.data[0].album.picUrl, 1024)
-                })
-            }
 
             const play = () => {
                 store.dispatch('player/playPersonalFM')
@@ -110,21 +90,10 @@
                 store.dispatch('player/moveToFMTrash')
             }
 
-            if (player.value.personalFMTrack.id === 0 || player.value.personalFMNextTrack.id === 0) {
-                init()
-            } else {
-                album.value = personalFMTrack.value.album
-                albumPic.value = proxy.$filters.resizeImage(personalFMTrack.value.album.picUrl, 1024)
-            }
-
-            watch(personalFMTrack, () => {
-                album.value = personalFMTrack.value.album
-                albumPic.value = proxy.$filters.resizeImage(personalFMTrack.value.album.picUrl, 1024)
-            })
-
             return {
                 router,
                 store,
+                proxy,
                 player,
                 personalFMTrack,
                 albumPic,
