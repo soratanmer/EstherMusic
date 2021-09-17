@@ -218,6 +218,8 @@ const handleAppEvents = () => {
         if (store.get('settings.enableGlobalShortcut')) {
             registerGlobalShortcut(window, store)
         }
+
+        require('@electron/remote/main').initialize()
     })
 
     app.on('activate', () => {

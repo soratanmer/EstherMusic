@@ -2,7 +2,7 @@ import { globalShortcut } from 'electron'
 
 import defaultShortcuts from '@common/shortcuts'
 
-export function registerGlobalShortcut(win, store) {
+export function registerGlobalShortcut(win, store): void {
     console.log('registerGlobalShortcut')
 
     let shortcuts = store.get('settings.shortcuts')

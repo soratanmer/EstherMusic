@@ -6,7 +6,7 @@ import cloneDeep from 'lodash/cloneDeep'
 import shortcuts from '@common/shortcuts'
 import { createMenu } from '@main/menu'
 
-export function initIpcMain(win, store) {
+export function initIpcMain(win, store): void {
     console.log('initIpcMain')
 
     ipcMain.on('unblock-music', (event, track) => {

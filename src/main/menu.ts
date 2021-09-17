@@ -3,7 +3,7 @@ import defaultShortcuts from '@common/shortcuts'
 
 const isMac = process.platform === 'darwin'
 
-export function createMenu(win, store) {
+export function createMenu(win, store): void {
     console.log('createMenu')
 
     let shortcuts = store.get('settings.shortcuts')

@@ -1,7 +1,7 @@
 import { nativeImage, ipcMain } from 'electron'
 import path from 'path'
 
-export function createThumbar(win) {
+export function createThumbar(win): void {
     console.log('createThumbar')
 
     const getNativeIcon = (name) => {

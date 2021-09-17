@@ -8,7 +8,7 @@ import apicache from 'NeteaseCloudMusicApi/util/apicache'
 
 const cache = apicache.middleware
 
-export function startNeteaseMusicApi() {
+export function startNeteaseMusicApi(): void {
     console.log('startNeteaseMusicApi')
 
     // Integrate API

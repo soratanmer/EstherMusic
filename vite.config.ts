@@ -21,6 +21,7 @@ export default defineConfig({
         __INTLIFY_PROD_DEVTOOLS__: false,
     },
     root: join(__dirname, 'src/render'),
+    publicDir: join(__dirname, 'src/render/assets'),
     resolve: {
         alias: [
             {
@@ -74,16 +75,18 @@ export default defineConfig({
         vue(),
         viteSvgIcons({
             // 指定需要缓存的图标文件夹
-            iconDirs: [join(__dirname, 'assets/icons')],
+            iconDirs: [join(__dirname, 'src/render/assets/icons')],
             // 指定symbolId格式
             symbolId: 'icon-[name]',
         }),
         vueI18n({
+            defaultSFCLang: 'yaml',
+
             // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
             compositionOnly: false,
 
             // you need to set i18n resource including paths !
-            include: join(__dirname, 'locale/**'),
+            include: join(__dirname, 'src/render/locale/**'),
         }),
     ],
 })
