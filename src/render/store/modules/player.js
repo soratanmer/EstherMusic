@@ -169,6 +169,7 @@ const mutations = {
     },
     switchShuffle(state) {
         state.shuffle = !state.shuffle
+        state.list = state.shuffle ? state.shuffledList : state.list
     },
     switchRepeatMode(state) {
         if (state.repeatMode === 'on') {

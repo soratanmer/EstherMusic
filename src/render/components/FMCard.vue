@@ -125,7 +125,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        animation: move 38s infinite;
+        animation: move 60s infinite;
         animation-direction: alternate;
         z-index: -1;
     }
