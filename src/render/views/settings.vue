@@ -399,7 +399,7 @@
     import { changeAppearance, bytesToSize } from '@render/utils/common'
     import { countDBSize, clearDB } from '@render/utils/db'
 
-    import pkg from '../../../package.json'
+    import pkg from '@root/package.json'
 
     import SvgIcon from '@render/components/SvgIcon.vue'
 
