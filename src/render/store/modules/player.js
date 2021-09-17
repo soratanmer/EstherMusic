@@ -210,7 +210,7 @@ const actions = {
         if (state.personalFMTrack.id === 0 || state.personalFMNextTrack.id === 0) {
             personalFM().then((result) => {
                 commit('setPersonalFMTrack', result.data[0])
-                commit('setPersonalFMNextTrack', result.data[0])
+                commit('setPersonalFMNextTrack', result.data[1])
             })
         }
     },
