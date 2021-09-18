@@ -49,10 +49,6 @@
     </nav>
 
     <ContextMenu ref="userProfileMenu">
-        <div class="item" @click="toSettings()">
-            <svg-icon icon-name="settings" />
-            {{ $t('library.userProfileMenu.settings') }}
-        </div>
         <div v-if="!looseLoggedIn" class="item" @click="toLogin">
             <svg-icon icon-name="login" />
             {{ $t('login.login') }}
@@ -60,6 +56,10 @@
         <div v-if="looseLoggedIn" class="item" @click="logout">
             <svg-icon icon-name="logout" />
             {{ $t('library.userProfileMenu.logout') }}
+        </div>
+        <div class="item" @click="toSettings()">
+            <svg-icon icon-name="settings" />
+            {{ $t('library.userProfileMenu.settings') }}
         </div>
     </ContextMenu>
 </template>

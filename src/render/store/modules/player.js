@@ -139,9 +139,8 @@ const mutations = {
     setShuffledCurrent(state, index) {
         state.shuffledCurrent = index
     },
-    setPlaylistSource(state, { type, id }) {
-        state.playlistSource.type = type
-        state.playlistSource.id = id
+    setPlaylistSource(state, source) {
+        state.playlistSource = source
     },
     setCurrentTrack(state, track) {
         state.currentTrack = track
