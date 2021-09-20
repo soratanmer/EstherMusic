@@ -9,6 +9,7 @@ import { initIpcMain } from '@main/ipcMain'
 import { createMenu } from '@main/menu'
 import { createThumbar } from '@main/thumbar'
 import { createTouchBar } from '@main/touchBar'
+import { createTray } from '@main/tray'
 import { createDockMenu } from '@main/dockMenu'
 import { registerGlobalShortcut } from '@main/globalShortcut'
 
@@ -210,6 +211,8 @@ const handleAppEvents = () => {
         window.setTouchBar(createTouchBar(window))
 
         createThumbar(window)
+
+        createTray(window)
 
         // register global shortcuts
         if (store.get('settings.enableGlobalShortcut')) {
