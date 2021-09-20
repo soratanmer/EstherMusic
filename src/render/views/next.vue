@@ -72,9 +72,7 @@
             })
 
             const playNextTracks = computed(() => {
-                return playNextList.value.map((tid) => {
-                    return tracks.value.find((t) => t.id === tid)
-                })
+                return tracks.value.filter((t) => playNextList.value.includes(t.id))
             })
 
             const loadTracks = () => {
