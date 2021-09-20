@@ -1,6 +1,6 @@
 {
     "name": "esthermusic",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A third party music player for Netease Music",
     "author": "SORATA FUJISAWA <soratanmer@gmail.com>",
     "main": "dist/main/index.js",
