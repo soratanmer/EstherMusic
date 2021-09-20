@@ -20,6 +20,7 @@ const isDev = !app.isPackaged
 let window: BrowserWindow
 let expressApp: express
 let willQuitApp: boolean = process.platform === 'darwin' ? false : true
+let tray
 
 let store: Store = new Store({
     windowWidth: {
@@ -212,14 +213,12 @@ const handleAppEvents = () => {
 
         createThumbar(window)
 
-        createTray(window)
+        tray = createTray(window)
 
         // register global shortcuts
         if (store.get('settings.enableGlobalShortcut')) {
             registerGlobalShortcut(window, store)
         }
-
-        require('@electron/remote/main').initialize()
     })
 
     app.on('activate', () => {

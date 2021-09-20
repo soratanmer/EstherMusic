@@ -1,39 +1,96 @@
+<br />
+
 <p align="center">
-    <img width="400" src="https://github.com/ArcherGu/fast-vite-electron/blob/main/logo.png" alt="logo">
+    <img src="images/logo.png" alt="Logo" width="156" height="156">
+  <h2 align="center" style="font-weight: 600">EstherMusic</h2>
+
 </p>
 
-# ⚡Vite + Electron & Esbuild Template
+![Library][library-screenshot]
 
-This template is used to build vite + electron projects.
+## ✨ 特性
 
-**NOTE:** Main process is built with esbuild. After some modifications, it currently supports [`emitDecoratorMetadata`](https://www.typescriptlang.org/tsconfig#emitDecoratorMetadata).
+- ✅ 使用 Vue.js 全家桶开发
+- 🔴 网易云账号登录（扫码/手机/邮箱登录）
+- 📺 支持 MV 播放
+- 📃 支持歌词显示
+- 📻 支持私人 FM / 每日推荐歌曲
+- 🚫🤝 无任何社交功能
+- 🌎️ 海外用户可直接播放（需要登录网易云账号）
+- 🔐 支持 [UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic)（[使用 revincx 修复的 npm 包](https://github.com/revincx/UnblockNeteaseMusic)），自动使用 QQ/酷狗/酷我音源替换变灰歌曲链接 （网页版不支持）
+- ✔️ 每日自动签到（手机端和电脑端同时签到）
+- 🌚 Light/Dark Mode 自动切换
+- 👆 支持 Touch Bar
+- ⌨️ 自定义快捷键和全局快捷键
+- 🛠 更多特性开发中
 
-## Motivation
+## 👷‍♂️ 打包客户端
 
-In the past, I've been building desktop clients with [vue](https://v3.vuejs.org/) + [vue-cli-plugin-electron-builder](https://github.com/nklayman/vue-cli-plugin-electron-builder), and they work very well. But as the project volume grows, webpack-based build patterns become slower and slower.
+如果在 Release 页面没有找到适合你的设备的安装包的话，你可以根据下面的步骤来打包自己的客户端。
 
-The advent of [vite](https://vitejs.dev/) and [esbuild](https://esbuild.github.io/) greatly improved the development experience and made me feel lightning fast ⚡.
+1. 打包 Electron 需要用到 Node.js 和 Yarn。可前往 [Node.js 官网](https://nodejs.org/zh-cn/) 下载安装包。安装 Node.js
+   后可在终端里执行 `npm install -g yarn` 来安装 Yarn。
+2. 使用 `git clone https://github.com/soratanmer/EshterMusic.git` 克隆本仓库到本地。
+3. 使用 `yarn install` 安装项目依赖。
+4. 复制 `/.env.example` 文件为 `/.env` 。
+5. 使用 `yarn build` 打包项目 ，打包出来的文件在 `/release` 目录下。
 
- It took me a little time to extract this template and thank you for using it.
+## :computer: 配置开发环境
 
-## How to use
+本项目由 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 提供 API。
 
-- Click the [Use this template](https://github.com/ArcherGu/fast-vite-electron/generate) button (you must be logged in) or just clone this repo.
-- In the project folder: 
-  ```bash
-  # install dependencies
-  yarn # npm install
+运行本项目
 
-  # run in developer mode
-  yarn dev # npm run dev
+```shell
+# 安装依赖
+yarn
 
-  # build
-  yarn build # npm run build
-  ```
+# 创建本地环境变量
+cp .env.example .env
 
-## Relative
+# 运行
+yarn dev
+```
 
-My blog post:
+## 📜 开源许可
 
-- [极速 DX Vite + Electron + esbuild](https://archergu.me/posts/vite-electron-esbuild)
-- [用装饰器给 Electron 提供一个基础 API 框架](https://archergu.me/posts/electron-decorators)
+本项目仅供个人学习研究使用，禁止用于商业及非法用途。
+
+基于 [MIT license](https://opensource.org/licenses/MIT) 许可进行开源。
+
+## 灵感来源
+
+API 源代码来自 [Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
+- [Apple Music](https://music.apple.com)
+- [YouTube Music](https://music.youtube.com)
+- [Spotify](https://www.spotify.com)
+- [网易云音乐](https://music.163.com)
+
+## 原项目
+
+[qier222/YesPlayMusic](https://github.com/qier222/YesPlayMusic)
+
+## 🖼️ 截图
+
+![lyrics][lyrics-screenshot]
+![library-dark][library-dark-screenshot]
+![album][album-screenshot]
+![home-2][home-2-screenshot]
+![artist][artist-screenshot]
+![search][search-screenshot]
+![home][home-screenshot]
+![explore][explore-screenshot]
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[album-screenshot]: images/album.png
+[artist-screenshot]: images/artist.png
+[explore-screenshot]: images/explore.png
+[home-screenshot]: images/home.png
+[home-2-screenshot]: images/home-2.png
+[lyrics-screenshot]: images/lyrics.png
+[library-screenshot]: images/library.png
+[library-dark-screenshot]: images/library-dark.png
+[search-screenshot]: images/search.png

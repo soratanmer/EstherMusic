@@ -72,10 +72,6 @@
                 return player.value.enabled && route.name !== 'lastfmCallback'
             })
 
-            const showNavbar = computed(() => {
-                return route.name !== 'lastfmCallback'
-            })
-
             const accountLoggedIn = computed(() => {
                 return isAccountLoggedIn()
             })
@@ -128,7 +124,6 @@
                 enableScrolling,
                 showPlayer,
                 enablePlayer,
-                showNavbar,
                 accountLoggedIn,
                 handleKeydown,
                 fetchData,
