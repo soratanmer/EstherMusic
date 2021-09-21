@@ -18,10 +18,8 @@
         "prettier": "npx prettier --write ./src ./script"
     },
     "dependencies": {
-        "@electron/remote": "^2.0.1",
         "@revincx/unblockneteasemusic": "^0.25.8",
         "@vscode/codicons": "^0.0.22",
-        "NeteaseCloudMusicApi": "^4.0.22",
         "axios": "^0.21.4",
         "change-case": "^4.1.2",
         "dayjs": "^1.10.7",
@@ -34,6 +32,7 @@
         "is-electron": "^2.2.0",
         "js-cookie": "^3.0.1",
         "md5": "^2.3.0",
+        "NeteaseCloudMusicApi": "^4.0.22",
         "nprogress": "^0.2.0",
         "plyr": "^3.6.8",
         "reflect-metadata": "^0.1.13",
