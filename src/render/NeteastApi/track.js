@@ -1,7 +1,6 @@
 import store from '@render/store'
 import request from '@render/utils/request'
 import { mapTrackPlayableStatus } from '@render/utils/common'
-import { cacheTrackDetail, getTrackDetailFromCache, cacheLyric, getLyricFromCache } from '@render/utils/db'
 
 /**
  * 获取音乐 url
@@ -37,35 +36,6 @@ export function getTrackDetail(ids) {
         data.songs = mapTrackPlayableStatus(data.songs, data.privileges)
         return data
     })
-    // const fetchLatest = () => {
-    //     return request({
-    //         url: '/song/detail',
-    //         method: 'get',
-    //         params: {
-    //             ids,
-    //         },
-    //     }).then((data) => {
-    //         data.songs.map((song) => {
-    //             const privileges = data.privileges.find((t) => t.id === song.id)
-    //             cacheTrackDetail(song, privileges)
-    //         })
-    //         data.songs = mapTrackPlayableStatus(data.songs, data.privileges)
-    //         return data
-    //     })
-    // }
-    // fetchLatest()
-
-    // let idsInArray = [String(ids)]
-    // if (typeof ids === 'string') {
-    //     idsInArray = ids.split(',')
-    // }
-
-    // return getTrackDetailFromCache(idsInArray).then((result) => {
-    //     if (result) {
-    //         result.songs = mapTrackPlayableStatus(result.songs, result.privileges)
-    //     }
-    //     return result ?? fetchLatest()
-    // })
 }
 
 /**
@@ -82,25 +52,6 @@ export function getLyric(id) {
             id,
         },
     })
-
-    // const fetchLatest = () => {
-    //     return request({
-    //         url: '/lyric',
-    //         method: 'get',
-    //         params: {
-    //             id,
-    //         },
-    //     }).then((result) => {
-    //         cacheLyric(id, result)
-    //         return result
-    //     })
-    // }
-
-    // fetchLatest()
-
-    // return getLyricFromCache(id).then((result) => {
-    //     return result ?? fetchLatest()
-    // })
 }
 
 /**

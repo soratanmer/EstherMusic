@@ -23,6 +23,7 @@ const saveToLocalStorage = initLocalStorage([
 ])
 
 let plugins = [saveToLocalStorage]
+
 if (isElectron()) {
     let sendSettings = getSendSettingsPlugin()
     plugins.push(sendSettings)

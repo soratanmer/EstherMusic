@@ -134,10 +134,10 @@ const router = createRouter({
     routes,
 })
 
-// const originalPush = router.push
-// router.push = function push(location) {
-//     return originalPush.call(this, location).catch((err) => err)
-// }
+const originalPush = router.push
+router.push = function push(location) {
+    return originalPush.call(this, location).catch((err) => err)
+}
 
 router.beforeEach((to, from, next) => {
     // 需要登录的逻辑

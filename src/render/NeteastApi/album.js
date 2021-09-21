@@ -1,6 +1,5 @@
 import request from '@render/utils/request'
 import { mapTrackPlayableStatus } from '@render/utils/common'
-import { cacheAlbum, getAlbumFromCache } from '@render/utils/db'
 
 /**
  * 获取专辑内容
@@ -18,25 +17,6 @@ export function getAlbum(id) {
         data.songs = mapTrackPlayableStatus(data.songs)
         return data
     })
-
-    // const fetchLatest = () => {
-    //     return request({
-    //         url: '/album',
-    //         method: 'get',
-    //         params: {
-    //             id,
-    //         },
-    //     }).then((data) => {
-    //         cacheAlbum(id, data)
-    //         data.songs = mapTrackPlayableStatus(data.songs)
-    //         return data
-    //     })
-    // }
-    // fetchLatest()
-
-    // return getAlbumFromCache(id).then((result) => {
-    //     return result ?? fetchLatest()
-    // })
 }
 
 /**
