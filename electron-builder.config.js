@@ -36,10 +36,6 @@ const config = {
     win: {
         target: [
             {
-                target: 'portable',
-                arch: ['x64'],
-            },
-            {
                 target: 'nsis',
                 arch: ['x64'],
             },
