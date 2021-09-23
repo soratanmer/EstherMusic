@@ -83,21 +83,16 @@
                     showToast(t('toast.needToLogin'))
                     return
                 }
-                let trackIDs = []
-                dailyTracks.value.forEach((track) => {
-                    if (track.playable) {
-                        trackIDs.push(track.id)
-                    }
-                })
-                if (trackIDs.length !== 0) {
+                let trackIDs = dailyTracks.value.map((track) => track.id)
+                if (trackIDs === undefined) {
+                    dispatch('toast/showToast', `无法播放每日推荐`, { root: true })
+                } else {
                     store.dispatch('player/replacePlaylist', {
                         trackIDs,
                         id: '/daily/songs',
                         type: 'url',
                         trackID: dailyTracks.value[0]?.id,
                     })
-                } else {
-                    showToast('无法播放每日推荐')
                 }
             }
 

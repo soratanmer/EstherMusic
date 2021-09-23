@@ -513,50 +513,32 @@ const actions = {
     },
     playAlbumByID({ dispatch }, { id, trackID = 'first' }) {
         getAlbum(id).then((data) => {
-            let trackIDs = []
-            data.songs.forEach((track) => {
-                if (track.playable) {
-                    trackIDs.push(track.id)
-                }
-            })
-            if (trackIDs.length !== 0) {
-                dispatch('replacePlaylist', { trackIDs, id, type: 'album', trackID })
+            let trackIDs = data.songs.forEach((track) => track.id)
+            if (trackIDs === undefined) {
+                dispatch('toast/showToast', `无法播放 ${data.album.name}`, { root: true })
             } else {
-                dispatch('toast/showToast', `无法播放专辑 ${data.album.name} 中的歌曲`, { root: true })
+                dispatch('replacePlaylist', { trackIDs, id, type: 'album', trackID })
             }
         })
     },
     playPlaylistByID({ dispatch }, { id, trackID = 'first', noCache = false }) {
         console.debug(`[debug][Player.js] playPlaylistByID 👉 id:${id} trackID:${trackID} noCache:${noCache}`)
         getPlaylistDetail(id, noCache).then((data) => {
-            let playlist = data.playlist.trackIds.map((t) => t.id)
-            getTrackDetail(playlist.join(',')).then((res) => {
-                let trackIDs = []
-                res.songs.forEach((track) => {
-                    if (track.playable) {
-                        trackIDs.push(track.id)
-                    }
-                })
-                if (trackIDs.length !== 0) {
-                    dispatch('replacePlaylist', { trackIDs, id, type: 'playlist', trackID })
-                } else {
-                    dispatch('toast/showToast', `无法播放歌单 ${data.playlist.name} 中的歌曲`, { root: true })
-                }
-            })
+            let trackIDs = data.playlist.trackIds.map((t) => t.id)
+            if (trackIDs === undefined) {
+                dispatch('toast/showToast', `无法播放 ${data.playlist.name}`, { root: true })
+            } else {
+                dispatch('replacePlaylist', { trackIDs, id, type: 'playlist', trackID })
+            }
         })
     },
     playArtistByID({ dispatch }, { id, trackID = 'first' }) {
         getArtist(id).then((data) => {
-            let trackIDs = []
-            data.hotSongs.forEach((track) => {
-                if (track.playable) {
-                    trackIDs.push(track.id)
-                }
-            })
-            if (trackIDs.length !== 0) {
-                dispatch('replacePlaylist', { trackIDs, id, type: 'artist', trackID })
+            let trackIDs = data.hotSongs.map((track) => track.id)
+            if (trackIDs === undefined) {
+                dispatch('toast/showToast', `无法播放 ${data.artist.name}`, { root: true })
             } else {
-                dispatch('toast/showToast', `无法播放歌手 ${data.artist.name} 中的歌曲`, { root: true })
+                dispatch('replacePlaylist', { trackIDs, id, type: 'artist', trackID })
             }
         })
     },

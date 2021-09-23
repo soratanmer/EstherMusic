@@ -188,7 +188,11 @@
                     store.dispatch('player/playAlbumByID', { id: props.id, trackID })
                 } else if (props.type === 'tracklist') {
                     let trackIDs = props.tracks.map((t) => t.id)
-                    store.dispatch('player/replacePlaylist', { trackIDs, id: props.id, type: 'artist', trackID })
+                    if (trackIDs === undefined) {
+                        dispatch('toast/showToast', `无法播放`, { root: true })
+                    } else {
+                        store.dispatch('player/replacePlaylist', { trackIDs, id: props.id, type: 'artist', trackID })
+                    }
                 }
             }
 
@@ -203,10 +207,18 @@
                     store.dispatch('player/playPlaylistByID', { id: props.id, trackID })
                 } else if (props.dbclickTrackFunc === 'playAList') {
                     let trackIDs = props.tracks.map((t) => t.id)
-                    store.dispatch('player/replacePlaylist', { trackIDs, id: props.id, type: 'artist', trackID })
+                    if (trackIDs === undefined) {
+                        dispatch('toast/showToast', `无法播放`, { root: true })
+                    } else {
+                        store.dispatch('player/replacePlaylist', { trackIDs, id: props.id, type: 'artist', trackID })
+                    }
                 } else if (props.dbclickTrackFunc === 'dailyTracks') {
                     let trackIDs = props.tracks.map((t) => t.id)
-                    store.dispatch('player/replacePlaylist', { trackIDs, id: '/daily/songs', type: 'url', trackID })
+                    if (trackIDs === undefined) {
+                        dispatch('toast/showToast', `无法播放`, { root: true })
+                    } else {
+                        store.dispatch('player/replacePlaylist', { trackIDs, id: '/daily/songs', type: 'url', trackID })
+                    }
                 }
             }
 

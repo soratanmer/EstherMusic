@@ -239,13 +239,12 @@
             }
 
             const playPopularSongs = (trackID = 'first') => {
-                let trackIDs = []
-                popularTracks.value.forEach((track) => {
-                    if (track.playable) {
-                        trackIDs.push(track.id)
-                    }
-                })
-                store.dispatch('player/replacePlaylist', { trackIDs, id: artist.value.id, type: 'artist', trackID })
+                let trackIDs = popularTracks.value.map((track) => track.id)
+                if (trackIDs === undefined) {
+                    dispatch('toast/showToast', `无法播放 ${artist.value.name}`, { root: true })
+                } else {
+                    store.dispatch('player/replacePlaylist', { trackIDs, id: artist.value.id, type: 'artist', trackID })
+                }
             }
 
             const followArtist = () => {
