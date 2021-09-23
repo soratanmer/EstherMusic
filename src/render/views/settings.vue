@@ -197,7 +197,8 @@
                     </select>
                 </div>
             </div>
-            <h3>第三方</h3>
+
+            <h3 v-if="isElectron">第三方</h3>
             <div v-if="isElectron" class="item">
                 <div class="left">
                     <div class="title">
