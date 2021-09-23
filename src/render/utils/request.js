@@ -24,7 +24,7 @@ service.interceptors.request.use(function (config) {
     if (!config.params) {
         config.params = {}
     }
-    if (baseURL[0] !== '/' && !isElectron()) {
+    if (baseURL !== '/' && !isElectron()) {
         config.params.cookie = `MUSIC_U=${Cookies.get('MUSIC_U')};`
     }
 
