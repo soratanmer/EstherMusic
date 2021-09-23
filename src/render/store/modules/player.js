@@ -224,15 +224,6 @@ const actions = {
             isPersonalFM: state.isPersonalFM,
         })
     },
-    setIntervals({ state, commit }) {
-        setInterval(() => {
-            if (state.howler === null) {
-                return
-            }
-            commit('setProgress', state.howler.seek())
-            localStorage.setItem('playerCurrentTrackTime', state.progress)
-        }, 1000)
-    },
     shuffleTheList({ state, commit }, firstTrackID = state.currentTrack.id) {
         let list = state.list.filter((tid) => tid !== firstTrackID)
         if (firstTrackID === 'first') {

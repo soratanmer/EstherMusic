@@ -284,9 +284,6 @@
             }
 
             const changeProgress = (value) => {
-                if (!value) {
-                    return
-                }
                 store.commit('player/setProgress', value)
             }
 

@@ -46,16 +46,20 @@ export function ipcRenderer(vueInstance) {
 
     ipcRenderer.on('increaseVolume', () => {
         if (player.volume + 0.1 >= 1) {
-            return (player.volume = 1)
+            store.commit('player/setVolume', 1)
+            return
         }
-        player.volume += 0.1
+        let volume = player.volume + 0.1
+        store.commit('player/setVolume', volume)
     })
 
     ipcRenderer.on('decreaseVolume', () => {
         if (player.volume - 0.1 <= 0) {
-            return (player.volume = 0)
+            store.commit('player/setVolume', 0)
+            return
         }
-        player.volume -= 0.1
+        let volume = player.volume - 0.1
+        store.commit('player/setVolume', volume)
     })
 
     ipcRenderer.on('like', () => {
