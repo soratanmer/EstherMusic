@@ -4,6 +4,8 @@ import isElectron from 'is-electron'
 
 let baseURL = ''
 
+console.log(import.meta.env)
+
 if (isElectron()) {
     if (import.meta.env.MODE === 'production') {
         baseURL = import.meta.env.VITE_APP_ELECTRON_API_URL
