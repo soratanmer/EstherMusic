@@ -4,8 +4,6 @@ import isElectron from 'is-electron'
 
 let baseURL = ''
 
-console.log(import.meta.env)
-
 if (isElectron()) {
     if (import.meta.env.MODE === 'production') {
         baseURL = import.meta.env.VITE_APP_ELECTRON_API_URL
@@ -26,7 +24,6 @@ service.interceptors.request.use(function (config) {
     if (!config.params) {
         config.params = {}
     }
-    console.log(baseURL)
     if (baseURL[0] !== '/' && !isElectron()) {
         config.params.cookie = `MUSIC_U=${Cookies.get('MUSIC_U')};`
     }
