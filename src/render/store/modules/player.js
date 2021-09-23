@@ -513,7 +513,7 @@ const actions = {
     },
     playAlbumByID({ dispatch }, { id, trackID = 'first' }) {
         getAlbum(id).then((data) => {
-            let trackIDs = data.songs.forEach((track) => track.id)
+            let trackIDs = data.songs.map((track) => track.id)
             if (trackIDs === undefined) {
                 dispatch('toast/showToast', `无法播放 ${data.album.name}`, { root: true })
             } else {

@@ -1,15 +1,15 @@
 import path from 'path'
 import { app, nativeImage, Tray, Menu } from 'electron'
 
-export function createTray(win) {
+export function createTray(win): Tray {
     console.log('createTray')
 
-    const getNativeIcon = (name) => {
+    const getNativeIcon = (name): Electron.NativeImage => {
         return nativeImage.createFromPath(path.join(__dirname, '../../public/tray/', name))
     }
 
     const icon = getNativeIcon('menu.png')
-    const tray = new Tray(icon)
+    const tray: Tray = new Tray(icon)
 
     tray.setToolTip('EstherMusic')
 
@@ -18,7 +18,7 @@ export function createTray(win) {
     })
 
     tray.on('right-click', () => {
-        const contextMenu = Menu.buildFromTemplate([
+        const contextMenu: Menu = Menu.buildFromTemplate([
             {
                 label: '播放/暂停',
                 icon: getNativeIcon('play.png'),
