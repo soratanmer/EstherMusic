@@ -15,13 +15,14 @@
                     <svg-icon icon-name="arrow-right" />
                 </div>
             </div>
-            <div class="card" @mouseover="activeCard = 2" @mouseleave="activeCard = 0" @click="goTo('username')" />
-            <div class="container" :class="{ active: activeCard === 2 }">
-                <div class="title-info">
-                    <div class="title">{{ $t('login.search') }}</div>
-                    <div class="info">{{ $t('login.readonly') }}</div>
+            <div class="card" @mouseover="activeCard = 2" @mouseleave="activeCard = 0" @click="goTo('username')">
+                <div class="container" :class="{ active: activeCard === 2 }">
+                    <div class="title-info">
+                        <div class="title">{{ $t('login.search') }}</div>
+                        <div class="info">{{ $t('login.readonly') }}</div>
+                    </div>
+                    <svg-icon icon-name="arrow-right" />
                 </div>
-                <svg-icon icon-name="arrow-right" />
             </div>
         </div>
     </div>
