@@ -107,8 +107,8 @@
 
             const avatarUrl = computed(() => {
                 return data.value.user.avatarUrl && looseLoggedIn.value
-                    ? `${data.value.user.avatarUrl}?param=512y512`
-                    : 'http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60'
+                    ? proxy.$filters.resizeImage(data.value.user.avatarUrl, 512)
+                    : 'https://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60'
             })
 
             const go = (where) => {

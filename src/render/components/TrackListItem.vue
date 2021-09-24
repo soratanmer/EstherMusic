@@ -109,7 +109,7 @@
                     track.value?.al?.picUrl ??
                     track.value?.album?.picUrl ??
                     'https://p2.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg'
-                return image + '?param=224y224'
+                return proxy.$filters.resizeImage(image, 224)
             })
 
             const artists = computed(() => {
@@ -130,8 +130,6 @@
                 let t
                 if (track.value?.tns?.length > 0) {
                     t = track.value.tns[0]
-                    // } else if (track.value.al?.tns?.length > 0) {
-                    //     t = track.value.al.tns[0]
                 } else {
                     t = track.value.alia[0]
                 }
@@ -143,7 +141,6 @@
             })
 
             const isTranslate = computed(() => {
-                // return track.value?.tns?.length > 0 || track.value.al?.tns?.length > 0 || track.value.alia?.length > 0
                 return track.value?.tns?.length > 0 || track.value.alia?.length > 0
             })
 

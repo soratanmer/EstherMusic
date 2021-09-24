@@ -205,11 +205,11 @@
             })
 
             const imageUrl = computed(() => {
-                return `${player.value.currentTrack.al?.picUrl}?param=1024y1024`
+                return proxy.$filters.resizeImage(player.value.currentTrack.al?.picUrl, 1024)
             })
 
             const bgImageUrl = computed(() => {
-                return `${player.value.currentTrack?.al?.picUrl}?param=512y512`
+                return proxy.$filters.resizeImage(player.value.currentTrack?.al?.picUrl, 512)
             })
 
             const lyricWithTranslation = computed(() => {

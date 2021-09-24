@@ -146,7 +146,7 @@
                     }
                 }
                 let img = item.img1v1Url || item.picUrl || item.coverImgUrl
-                return `${img?.replace('http://', 'https://')}?param=512y512`
+                return proxy.$filters.resizeImage(img, 512)
             }
 
             return {

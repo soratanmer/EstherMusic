@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import { ref, computed } from 'vue'
+    import { ref, computed, getCurrentInstance } from 'vue'
     import { useStore } from 'vuex'
     import { useRouter } from 'vue-router'
     import sample from 'lodash/sample'
@@ -45,6 +45,7 @@
             const router = useRouter()
             const store = useStore()
             const { t } = useI18n()
+            const { proxy } = getCurrentInstance()
 
             const useAnimation = ref(false)
 
@@ -60,7 +61,8 @@
             }
 
             const coverUrl = computed(() => {
-                return `${dailyTracks.value[0]?.al.picUrl || sample(defaultCovers)}?param=1024y1024`
+                let img = dailyTracks.value[0]?.al.picUrl || sample(defaultCovers)
+                return proxy.$filters.resizeImage(img, 1024)
             })
 
             const loadDailyTracks = () => {
