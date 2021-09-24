@@ -100,7 +100,8 @@
         "nextUp": "播放列表"
     },
     "modal": {
-        "close": "关闭"
+        "close": "关闭",
+        "playlistDescription": "歌单介绍"
     },
     "search": {
         "artist": "艺人",
@@ -170,6 +171,8 @@
         "removeFromLibrary": "从音乐库删除",
         "addToPlaylist": "添加到歌单",
         "searchInPlaylist": "歌单内搜索",
+        "deletePlaylist": "删除歌单",
+        "editPlaylist": "编辑歌单信息",
         "copyUrl": "复制链接",
         "allPlaylists": "全部歌单",
         "minePlaylists": "创建的歌单",
@@ -180,8 +183,19 @@
         "removedFromPlaylist": "已从歌单中删除",
         "savedToMyLikedSongs": "已添加到我喜欢的音乐",
         "removedFromMyLikedSongs": "已从喜欢的音乐中删除",
+        "subscribedPlaylist": "已保存到音乐库",
+        "unsubscribedPlaylist": "已从音乐库删除",
         "copied": "已复制",
         "copyFailed": "复制失败：",
-        "needToLogin": "此操作需要登录网易云帐号"
-    }
+        "needToLogin": "此操作需要登录网易云帐号",
+        "cannotPlay": "无法播放",
+        "dailyTracks": "每日推荐",
+        "playlist": "歌单",
+        "album": "专辑",
+        "artist": "艺人"
+    },
+    "FMCard": {
+        "personalFM": "私人FM"
+    },
+    "DailyTracksCard": {}
 }

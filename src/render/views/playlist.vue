@@ -82,7 +82,6 @@
         </div>
         <div v-if="specialPlaylistInfo !== undefined" class="special-playlist">
             <div class="title" :class="specialPlaylistInfo.gradient" @click.right="openMenu">
-                <!-- <img :src="playlist.coverImgUrl | resizeImage" /> -->
                 {{ specialPlaylistInfo.name }}
             </div>
             <div class="subtitle"> {{ playlist.englishTitle }} · {{ playlist.updateFrequency }} </div>
@@ -142,7 +141,7 @@
         />
 
         <div class="load-more">
-            <ButtonTwoTone v-show="hasMore" color="grey" :loading="loadingMore" @click="loadMore(50)">{{
+            <ButtonTwoTone v-show="hasMore" color="grey" :loading="loadingMore" @click="loadMore()">{{
                 $t('explore.loadMore')
             }}</ButtonTwoTone>
         </div>
@@ -152,21 +151,20 @@
             :close="toggleFullDescription"
             :show-footer="false"
             :click-outside-hide="true"
-            title="歌单介绍"
+            :title="$t('modal.playlistDescription')"
             >{{ playlist.description }}</Modal
         >
 
         <ContextMenu ref="playlistMenu">
-            <!-- <div class="item">{{ $t('contextMenu.addToQueue') }}</div> -->
             <div class="item" @click="likePlaylist(true)">
                 {{ playlist.subscribed ? $t('contextMenu.removeFromLibrary') : $t('contextMenu.saveToLibrary') }}</div
             >
             <div class="item" @click="searchInPlaylist()">{{ $t('contextMenu.searchInPlaylist') }} </div>
             <div v-if="playlist.creator.userId === data.user.userId" class="item" @click="editPlaylist">
-                编辑歌单信息
+                {{ $t('contextMenu.editPlaylist') }}
             </div>
             <div v-if="playlist.creator.userId === data.user.userId" class="item" @click="deletePlaylists()">
-                删除歌单
+                {{ $t('contextMenu.deletePlaylist') }}
             </div>
         </ContextMenu>
     </div>
@@ -229,7 +227,7 @@
             const showFullDescription = ref(false)
             const tracks = ref([])
             const loadingMore = ref(false)
-            const lastLoadedTrackIndex = ref(9)
+            const lastLoadedTrackIndex = ref(10)
             const displaySearchInPlaylist = ref(false) // 是否显示搜索框
             const searchKeyWords = ref('') // 搜索使用的关键字
             const inputSearchKeyWords = ref('') // 搜索框中正在输入的关键字
@@ -288,7 +286,11 @@
                     if (res.code === 200) {
                         playlist.value.subscribed = !playlist.value.subscribed
                         if (toast === true) {
-                            showToast(playlist.value.subscribed ? '已保存到音乐库' : '已从音乐库删除')
+                            showToast(
+                                playlist.value.subscribed
+                                    ? t('toast.subscribedPlaylist')
+                                    : t('toast.unsubscribedPlaylist'),
+                            )
                         }
                     }
                     getPlaylistDetail(ids.value, true).then((result) => {
@@ -363,7 +365,7 @@
                     inputSearchKeyWords.value = ''
                 } else {
                     searchInputWidth.value = '172px'
-                    loadMore(50)
+                    loadMore()
                 }
             }
 
@@ -398,13 +400,13 @@
                 getPlaylistDetail(ids.value, true)
                     .then((res) => {
                         playlist.value = res.playlist
-                        tracks.value = res.playlist.tracks
+                        tracks.value = res.playlist.tracks.slice(0, 50)
                         NProgress.done()
                         if (next !== undefined) {
                             next()
                         }
                         show.value = true
-                        lastLoadedTrackIndex.value = res.playlist.tracks.length - 1
+                        lastLoadedTrackIndex.value = tracks.value.length - 1
                         return res
                     })
                     .then(() => {

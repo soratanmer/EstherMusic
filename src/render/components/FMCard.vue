@@ -20,7 +20,7 @@
                     /></button-icon>
                     <button-icon :title="$t('player.next')" @click="next"><svg-icon icon-name="next" /></button-icon
                 ></div>
-                <div class="card-name"><svg-icon icon-name="fm" />私人FM</div>
+                <div class="card-name"><svg-icon icon-name="fm" />{{ $t('FMCard.personalFM') }}</div>
             </div>
         </div>
     </div>
