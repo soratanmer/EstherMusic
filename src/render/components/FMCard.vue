@@ -7,7 +7,9 @@
                 <div class="artist">
                     <ArtistsInLine :artists="artists" />
                     -
-                    <router-link :to="`/album/${album?.id}`" :title="album?.name">{{ album?.name }}</router-link>
+                    <router-link :to="`/album/${personalFMTrack.album.id}`" :title="personalFMTrack.album.name">{{
+                        personalFMTrack.album.name
+                    }}</router-link>
                 </div>
             </div>
             <div class="controls">
@@ -53,12 +55,8 @@
                 return player.value.personalFMTrack
             })
 
-            const album = computed(() => {
-                return personalFMTrack.value.album
-            })
-
             const albumPic = computed(() => {
-                return personalFMTrack.value.album?.picUrl
+                return personalFMTrack.value.album.picUrl
             })
 
             const artists = computed(() => {
@@ -99,7 +97,6 @@
                 albumPic,
                 isPlaying,
                 artists,
-                album,
                 play,
                 next,
                 goToAlbum,
