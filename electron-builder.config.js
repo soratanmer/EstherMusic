@@ -60,14 +60,6 @@ const config = {
             },
             {
                 target: 'deb',
-                arch: ['x64', 'armv7l'],
-            },
-            {
-                target: 'rpm',
-                arch: ['x64'],
-            },
-            {
-                target: 'snap',
                 arch: ['x64'],
             },
             {
