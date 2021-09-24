@@ -6,7 +6,7 @@ import request from '@render/utils/request'
  * - uid : 用户 id
  * @param {number} uid
  */
-export function userDetail(uid) {
+export function userDetail(uid: Number) {
     return request({
         url: '/user/detail',
         method: 'get',
@@ -42,7 +42,7 @@ export function userAccount() {
  * @param {number} params.limit
  * @param {number=} params.offset
  */
-export function userPlaylist(params) {
+export function userPlaylist(params: Object) {
     return request({
         url: '/user/playlist',
         method: 'get',
@@ -56,7 +56,7 @@ export function userPlaylist(params) {
  * - uid: 用户 id
  * @param {number} uid
  */
-export function userLikedSongsIDs(uid) {
+export function userLikedSongsIDs(uid: Number) {
     return request({
         url: '/likelist',
         method: 'get',
@@ -73,7 +73,7 @@ export function userLikedSongsIDs(uid) {
  * -  type: 签到类型 , 默认 0, 其中 0 为安卓端签到 ,1 为 web/PC 签到
  * @param {number} type
  */
-export function dailySignin(type = 0) {
+export function dailySignin(type: Number = 0) {
     return request({
         url: '/daily_signin',
         method: 'post',
@@ -93,12 +93,11 @@ export function dailySignin(type = 0) {
  * @param {number} params.limit
  * @param {number=} params.offset
  */
-export function likedAlbums(params) {
+export function likedAlbums(params: Object) {
     return request({
         url: '/album/sublist',
         method: 'get',
         params: {
-            // limit: params.limit,
             ...params,
             timestamp: new Date().getTime(),
         },
@@ -109,12 +108,11 @@ export function likedAlbums(params) {
  * 获取收藏的歌手（需要登录）
  * 说明 : 调用此接口可获取到用户收藏的歌手
  */
-export function likedArtists(params) {
+export function likedArtists(params: Object) {
     return request({
         url: '/artist/sublist',
         method: 'get',
         params: {
-            // limit: params.limit,
             ...params,
             timestamp: new Date().getTime(),
         },
@@ -125,12 +123,11 @@ export function likedArtists(params) {
  * 获取收藏的MV（需要登录）
  * 说明 : 调用此接口可获取到用户收藏的MV
  */
-export function likedMVs(params) {
+export function likedMVs(params: Object) {
     return request({
         url: '/mv/sublist',
         method: 'get',
         params: {
-            // limit: params.limit,
             ...params,
             timestamp: new Date().getTime(),
         },

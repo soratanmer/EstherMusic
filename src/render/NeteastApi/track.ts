@@ -8,8 +8,8 @@ import { mapTrackPlayableStatus } from '@render/utils/common'
  * !!!未登录状态返回试听片段(返回字段包含被截取的正常歌曲的开始时间和结束时间)
  * @param {string} id - 音乐的 id，例如 id=405998841,33894312
  */
-export function getMP3(id) {
-    let br = store.state.settings?.musicQuality !== undefined ? store.state.settings.musicQuality : 320000
+export function getMP3(id: String) {
+    let br: Number = store.state.settings?.musicQuality !== undefined ? store.state.settings.musicQuality : 320000
     return request({
         url: '/song/url',
         method: 'get',
@@ -25,14 +25,14 @@ export function getMP3(id) {
  * 说明 : 调用此接口 , 传入音乐 id(支持多个 id, 用 , 隔开), 可获得歌曲详情(注意:歌曲封面现在需要通过专辑内容接口获取)
  * @param {string} ids - 音乐 id, 例如 ids=405998841,33894312
  */
-export function getTrackDetail(ids) {
+export function getTrackDetail(ids: String) {
     return request({
         url: '/song/detail',
         method: 'get',
         params: {
             ids,
         },
-    }).then((data) => {
+    }).then((data: any) => {
         data.songs = mapTrackPlayableStatus(data.songs, data.privileges)
         return data
     })
@@ -44,7 +44,7 @@ export function getTrackDetail(ids) {
  * @param {number} id - 音乐 id
  */
 
-export function getLyric(id) {
+export function getLyric(id: Number) {
     return request({
         url: '/lyric',
         method: 'get',
@@ -60,7 +60,7 @@ export function getLyric(id) {
  * @param {number} type - 地区类型 id, 对应以下: 全部:0 华语:7 欧美:96 日本:8 韩国:16
  */
 
-export function topSong(type) {
+export function topSong(type: Number) {
     return request({
         url: '/top/song',
         method: 'get',
@@ -80,12 +80,14 @@ export function topSong(type) {
  * @param {boolean=} [params.like]
  */
 
-export function likeATrack(params) {
-    params.timestamp = new Date().getTime()
+export function likeATrack(params: Object) {
     return request({
         url: '/like',
         method: 'get',
-        params,
+        params: {
+            ...params,
+            timestamp: new Date().getTime(),
+        },
     })
 }
 
@@ -101,11 +103,13 @@ export function likeATrack(params) {
  * @param {number=} params.time
  */
 
-export function scrobble(params) {
-    params.timestamp = new Date().getTime()
+export function scrobble(params: Object) {
     return request({
         url: '/scrobble',
         method: 'get',
-        params,
+        params: {
+            ...params,
+            timestamp: new Date().getTime(),
+        },
     })
 }
