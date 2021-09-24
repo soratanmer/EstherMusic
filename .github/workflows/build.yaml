@@ -8,7 +8,7 @@ on:
 
 jobs:
     build-windows:
-        runs-on: windows-latest
+        runs-on: windows-2022
 
         steps:
             - name: Check out Git repository
@@ -46,7 +46,7 @@ jobs:
                   if-no-files-found: ignore
 
     build-MacOS:
-        runs-on: macos-latest
+        runs-on: macos-10.15
 
         steps:
             - name: Check out Git repository
@@ -88,4 +88,34 @@ jobs:
               with:
                   name: EstherMusic-mac-universal
                   path: release/**/*-universal.dmg
+                  if-no-files-found: ignore
+
+    build-Linux:
+        runs-on: ubuntu-20.04
+
+        steps:
+            - name: Check out Git repository
+              uses: actions/checkout@v2
+
+            - name: Install Node.js, NPM and Yarn
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 14.16.0
+
+            - name: Install Packages
+              run: |
+                  npm install
+
+            - name: Build
+              run: |
+                  npm run build
+              env:
+                  VITE_APP_ELECTRON_API_URL: /api
+                  VITE_APP_ELECTRON_API_URL_DEV: http://127.0.0.1:10754
+                  GH_TOKEN: ${{ secrets.ESTHERMUSIC }}
+
+            - uses: actions/upload-artifact@v2
+              with:
+                  name: EstherMusic-linux
+                  path: release/**/*.AppImage
                   if-no-files-found: ignore
