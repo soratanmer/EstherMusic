@@ -69,8 +69,23 @@ jobs:
                   VITE_APP_ELECTRON_API_URL_DEV: http://127.0.0.1:10754
                   GH_TOKEN: ${{ secrets.ESTHERMUSIC }}
 
-            - uses: actions/upload-artifact@v2
+            - name: artifact x64
+              uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-mac
-                  path: release/**/*.dmg
+                  name: EstherMusic-mac-x64
+                  path: release/**/*-x64.dmg
+                  if-no-files-found: ignore
+
+            - name: artifact arm64
+              uses: actions/upload-artifact@v2
+              with:
+                  name: EstherMusic-mac-arm64
+                  path: release/**/*-arm64.dmg
+                  if-no-files-found: ignore
+
+            - name: artifact universal
+              uses: actions/upload-artifact@v2
+              with:
+                  name: EstherMusic-mac-universal
+                  path: release/**/*-universal.dmg
                   if-no-files-found: ignore
