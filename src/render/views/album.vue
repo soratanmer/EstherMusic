@@ -60,7 +60,15 @@
                 </div>
             </div>
         </div>
-        <TrackList :id="album.id" :tracks="tracks" :type="'album'" :album-object="album" />
+        <div v-if="Object.keys(tracksByDisc).length !== 1">
+            <div v-for="(disc, cd) in tracksByDisc" :key="cd">
+                <h2>Disc {{ cd }}</h2>
+                <TrackList :id="album.id" :tracks="disc" :type="'album'" :album-object="album" />
+            </div>
+        </div>
+        <div v-else>
+            <TrackList :id="album.id" :tracks="tracks" :type="'album'" :album-object="album" />
+        </div>
         <div class="extra-info">
             <div class="album-time" />
             <div class="release-date">
@@ -106,6 +114,7 @@
     import NProgress from 'nprogress'
     import useClipboard from 'vue-clipboard3'
     import { useI18n } from 'vue-i18n'
+    import { groupBy } from 'lodash'
 
     import { getArtistAlbum } from '@render/NeteastApi/artist'
     import { getTrackDetail } from '@render/NeteastApi/track'
@@ -186,6 +195,10 @@
                 } else {
                     return [...realAlbum, ...restItem].slice(0, 5)
                 }
+            })
+
+            const tracksByDisc = computed(() => {
+                return groupBy(tracks.value, 'cd')
             })
 
             const openMenu = (e) => {
@@ -293,6 +306,7 @@
                 proxy,
                 album,
                 tracks,
+                tracksByDisc,
                 showFullDescription,
                 show,
                 moreAlbums,

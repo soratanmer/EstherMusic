@@ -27,6 +27,9 @@ service.interceptors.request.use(function (config) {
     if (baseURL[0] !== '/' && !isElectron()) {
         config.params.cookie = `MUSIC_U=${Cookies.get('MUSIC_U')};`
     }
+    if (!isElectron()) {
+        config.params.realIP = '116.25.146.177'
+    }
 
     const proxy = JSON.parse(localStorage.getItem('settings')).proxyConfig
     if (['HTTP', 'HTTPS'].includes(proxy.protocol)) {
