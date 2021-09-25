@@ -2,13 +2,6 @@
     "rewrites": [
         {
             "source": "/api/:match*",
-            "has": [
-                {
-                    "type": "query",
-                    "key": "realIP",
-                    "value": "116.25.146.177"
-                }
-            ],
             "destination": "https://netease-cloud-music-api-soratanmer.vercel.app/:match*"
         }
     ]
