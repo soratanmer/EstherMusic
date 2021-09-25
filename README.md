@@ -10,8 +10,8 @@
 
 ## ✨ 特性
 
-- ✅ 使用 Vue.js 全家桶开发
-- 🔴 网易云账号登录（扫码/手机/邮箱登录）
+- ✅ 使用 Vite + Vue 3 全家桶开发
+- 🔴 网易云账号登录（手机/邮箱登录）
 - 📺 支持 MV 播放
 - 📃 支持歌词显示
 - 📻 支持私人 FM / 每日推荐歌曲
@@ -26,18 +26,16 @@
 
 ## 👷‍♂️ 打包客户端
 
-如果在 Release 页面没有找到适合你的设备的安装包的话，你可以根据下面的步骤来打包自己的客户端。
-
 1. 打包 Electron 需要用到 Node.js 和 Yarn。可前往 [Node.js 官网](https://nodejs.org/zh-cn/) 下载安装包。安装 Node.js
    后可在终端里执行 `npm install -g yarn` 来安装 Yarn。
-2. 使用 `git clone https://github.com/soratanmer/EshterMusic.git` 克隆本仓库到本地。
+2. 使用 `git clone https://github.com/soratanmer/EstherMusic.git` 克隆本仓库到本地。
 3. 使用 `yarn install` 安装项目依赖。
 4. 复制 `/.env.example` 文件为 `/.env` 。
 5. 使用 `yarn build` 打包项目 ，打包出来的文件在 `/release` 目录下。
 
 ## :computer: 配置开发环境
 
-本项目由 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 提供 API。
+本项目使用 [Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) ，以 NPM 包的形式集成在主进程内。
 
 运行本项目
 
@@ -52,24 +50,26 @@ cp .env.example .env
 yarn dev
 ```
 
+只运行网页版则需要将 [Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 克隆至本地。
+
+```shell
+# 运行
+yarn dev:vite
+```
+
 ## 📜 开源许可
 
 本项目仅供个人学习研究使用，禁止用于商业及非法用途。
 
 基于 [MIT license](https://opensource.org/licenses/MIT) 许可进行开源。
 
-## 灵感来源
-
-API 源代码来自 [Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
-
-- [Apple Music](https://music.apple.com)
-- [YouTube Music](https://music.youtube.com)
-- [Spotify](https://www.spotify.com)
-- [网易云音乐](https://music.163.com)
-
 ## 原项目
 
 [qier222/YesPlayMusic](https://github.com/qier222/YesPlayMusic)
+
+## Vite + Electron
+
+[ArcherGu/fast-vite-electron](https://github.com/ArcherGu/fast-vite-electron)
 
 ## 🖼️ 截图
 
