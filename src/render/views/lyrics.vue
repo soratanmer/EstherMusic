@@ -77,7 +77,11 @@
                                 >
                                     <svg-icon icon-name="previous" />
                                 </button-icon>
-                                <button-icon v-show="player.isPersonalFM" title="不喜欢" @click="moveToFMTrash()">
+                                <button-icon
+                                    v-show="player.isPersonalFM"
+                                    :title="$t('player.disliked')"
+                                    @click="moveToFMTrash()"
+                                >
                                     <svg-icon icon-name="thumbs-down" />
                                 </button-icon>
                                 <button-icon

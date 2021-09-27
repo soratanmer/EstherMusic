@@ -51,7 +51,7 @@
                     <button-icon v-show="!player.isPersonalFM" :title="$t('player.previous')" @click="playPrevTrack()"
                         ><svg-icon icon-name="previous"
                     /></button-icon>
-                    <button-icon v-show="player.isPersonalFM" title="不喜欢" @click="moveToFMTrash()"
+                    <button-icon v-show="player.isPersonalFM" :title="$t('player.disliked')" @click="moveToFMTrash()"
                         ><svg-icon icon-name="thumbs-down"
                     /></button-icon>
                     <button-icon
@@ -133,6 +133,7 @@
     import { useStore } from 'vuex'
     import { useRoute, useRouter } from 'vue-router'
     import VueSlider from 'vue-slider-component'
+    import { useI18n } from 'vue-i18n'
 
     import ButtonIcon from '@render/components/ButtonIcon.vue'
     import SvgIcon from '@render/components/SvgIcon.vue'
@@ -149,6 +150,7 @@
             const route = useRoute()
             const router = useRouter()
             const { proxy } = getCurrentInstance()
+            const { t } = useI18n()
 
             const progress = ref(Number(localStorage.getItem('playerCurrentTrackTime')))
             const progressInterval = ref()
@@ -227,7 +229,7 @@
             })
 
             const audioSource = computed(() => {
-                return player.value.howler?._src.includes('kuwo.cn') ? '音源来自酷我' : ''
+                return player.value.howler?._src.includes('kuwo.cn') ? t('player.audioSourceFormKuWo') : ''
             })
 
             const goToNextTracksPage = () => {

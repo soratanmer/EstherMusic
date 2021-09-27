@@ -231,7 +231,11 @@
                         if (res.code === 200) {
                             dynamicDetail.value.isSub = !dynamicDetail.value.isSub
                             if (toast === true) {
-                                showToast(dynamicDetail.value.isSub ? '已保存到音乐库' : '已从音乐库删除')
+                                showToast(
+                                    dynamicDetail.value.isSub
+                                        ? t('toast.subscribedPlaylist')
+                                        : t('toast.unsubscribedPlaylist'),
+                                )
                             }
                         }
                     })

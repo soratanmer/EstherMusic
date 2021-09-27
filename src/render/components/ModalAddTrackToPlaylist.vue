@@ -4,11 +4,11 @@
         :show="show"
         :close="close"
         :show-footer="false"
-        title="添加到歌单"
+        :title="$t('modal.addToPlayList')"
         width="25vw"
     >
         <div class="new-playlist-button" @click="newPlaylist">
-            <svg-icon icon-name="plus">新建歌单</svg-icon>
+            <svg-icon icon-name="plus">{{ $t('modal.newPlayList') }}</svg-icon>
         </div>
         <div
             v-for="playlist in ownPlaylists"
@@ -19,7 +19,7 @@
             <img :src="proxy.$filters.resizeImage(playlist.coverImgUrl, 224)" />
             <div class="info">
                 <div class="title">{{ playlist.name }}</div>
-                <div class="track-count">{{ playlist.trackCount }} 首</div>
+                <div class="track-count">{{ playlist.trackCount }} {{ $t('modal.songs') }}</div>
             </div>
         </div>
     </Modal>

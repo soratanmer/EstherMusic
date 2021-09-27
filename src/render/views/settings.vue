@@ -33,7 +33,6 @@
                 <div class="right">
                     <select v-model="lang">
                         <option value="en">🇬🇧 English</option>
-                        <option value="tr">🇹🇷 Türkçe</option>
                         <option value="zh-CN">🇨🇳 简体中文</option>
                         <option value="zh-TW">ᴛᴡ 繁體中文</option>
                     </select>
@@ -71,7 +70,7 @@
                 </div>
             </div>
 
-            <h3>音质</h3>
+            <h3>{{ $t('settings.soundQuality') }}</h3>
             <div class="item">
                 <div class="left">
                     <div class="title">
@@ -107,7 +106,7 @@
                 </div>
             </div>
 
-            <h3 v-if="isElectron">缓存</h3>
+            <h3 v-if="isElectron">{{ $t('settings.cache') }}</h3>
             <div v-if="isElectron" class="item">
                 <div class="left">
                     <div class="title">
@@ -163,7 +162,7 @@
                 </div>
             </div>
 
-            <h3>歌词</h3>
+            <h3>{{ $t('settings.lyric') }}</h3>
             <div class="item">
                 <div class="left">
                     <div class="title">
@@ -198,11 +197,11 @@
                 </div>
             </div>
 
-            <h3 v-if="isElectron">第三方</h3>
+            <h3 v-if="isElectron">{{ $t('settings.thirdParties') }}</h3>
             <div v-if="isElectron" class="item">
                 <div class="left">
                     <div class="title">
-                        启用
+                        {{ $t('settings.open') }}
                         <a href="https://github.com/nondanee/UnblockNeteaseMusic" target="blank">UnblockNeteaseMusic</a>
                     </div>
                 </div>
@@ -219,7 +218,7 @@
                 </div>
             </div>
 
-            <h3>其他</h3>
+            <h3>{{ $t('settings.other') }}</h3>
             <div v-if="isElectron && !isMac" class="item">
                 <div class="left">
                     <div class="title">{{ $t('settings.minimizeToTray') }}</div>
@@ -271,17 +270,17 @@
             </div>
 
             <div v-if="isElectron">
-                <h3>代理</h3>
+                <h3>{{ $t('settings.proxy') }}</h3>
                 <div class="item">
                     <div class="left">
-                        <div class="title">代理协议</div>
+                        <div class="title">{{ $t('settings.proxyOptions.agreement') }}</div>
                     </div>
                     <div class="right">
                         <select v-model="proxyProtocol">
-                            <option value="noProxy">关闭代理</option>
-                            <option value="HTTP">HTTP 代理</option>
-                            <option value="HTTPS">HTTPS 代理</option>
-                            <!-- <option value="SOCKS"> SOCKS 代理 </option> -->
+                            <option value="noProxy">{{ $t('settings.proxyOptions.close') }}</option>
+                            <option value="HTTP">HTTP {{ $t('settings.proxy') }}</option>
+                            <option value="HTTPS">HTTPS {{ $t('settings.proxy') }}</option>
+                            <!-- <option value="SOCKS"> SOCKS {{ $t('settings.proxy') }} </option> -->
                         </select>
                     </div>
                 </div>
@@ -289,23 +288,23 @@
                     <input
                         v-model="proxyServer"
                         class="text-input"
-                        placeholder="服务器地址"
+                        :placeholder="$t('settings.proxyOptions.address')"
                         :disabled="proxyProtocol === 'noProxy'"
                     /><input
                         v-model="proxyPort"
                         class="text-input"
-                        placeholder="端口"
+                        :placeholder="$t('settings.proxyOptions.port')"
                         type="number"
                         min="1"
                         max="65535"
                         :disabled="proxyProtocol === 'noProxy'"
                     />
-                    <button @click="sendProxyConfig">更新代理</button>
+                    <button @click="sendProxyConfig">{{ $t('settings.proxyOptions.update') }}</button>
                 </div>
             </div>
 
             <div v-if="isElectron">
-                <h3>快捷键</h3>
+                <h3>{{ $t('settings.shortcut') }}</h3>
                 <div class="item">
                     <div class="left">
                         <div class="title">
@@ -331,9 +330,9 @@
                     @keydown="handleShortcutKeydown"
                 >
                     <div class="row row-head">
-                        <div class="col">功能</div>
-                        <div class="col">快捷键</div>
-                        <div class="col">全局快捷键</div>
+                        <div class="col">{{ $t('settings.shortcutOptions.functions') }}</div>
+                        <div class="col">{{ $t('settings.shortcut') }}</div>
+                        <div class="col">{{ $t('settings.shortcutOptions.global') }}</div>
                     </div>
                     <div v-for="shortcut in settings.shortcuts" :key="shortcut.id" class="row">
                         <div class="col">{{ shortcut.name }}</div>
@@ -374,7 +373,9 @@
                             >
                         </div>
                     </div>
-                    <button class="restore-default-shortcut" @click="restoreDefaultShortcuts">恢复默认快捷键</button>
+                    <button class="restore-default-shortcut" @click="restoreDefaultShortcuts">{{
+                        $t('settings.shortcutOptions.default')
+                    }}</button>
                 </div>
             </div>
 
@@ -418,6 +419,7 @@
             const route = useRoute()
             const router = useRouter()
             const i18n = useI18n()
+            const { t } = useI18n()
 
             const tracksCache = ref({
                 size: '0KB',
@@ -725,7 +727,7 @@
                     config.protocol = value
                     if (value === 'noProxy') {
                         ipcRenderer.send('removeProxy')
-                        showToast('已关闭代理')
+                        showToast(t('toast.removeProxy'))
                     }
                     store.commit('settings/updateSettings', {
                         key: 'proxyConfig',
@@ -797,7 +799,7 @@
                 } else {
                     ipcRenderer.send('setProxy', config)
                 }
-                showToast('已更新代理设置')
+                showToast(t('toast.updateProxy'))
             }
 
             const formatShortcut = (shortcut) => {
@@ -841,7 +843,7 @@
                 }
                 store.commit('settings/updateSettings', payload)
                 ipcRenderer.send('updateShortcut', payload)
-                showToast('快捷键已保存')
+                showToast(t('toast.savedShortcut'))
                 recordedShortcut.value = []
             }
 

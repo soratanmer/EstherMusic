@@ -22,6 +22,8 @@
         "likedSongs": "我喜歡的音樂",
         "sLikedSongs": "喜歡的音樂",
         "playlists": "歌單",
+        "minePlaylists": "我的歌單",
+        "likedPlaylists": "收藏的歌單",
         "albums": "專輯",
         "artists": "藝人",
         "mvs": "MV",
@@ -77,6 +79,10 @@
         "login": "登入",
         "loginWithEmail": "信箱登入",
         "loginWithPhone": "手機號碼登入",
+        "incorrectPhone": "國家區碼或手機號碼不正確",
+        "incorrectEmail": "信箱不正確",
+        "checkAccountOrPassword": "賬號或密碼錯誤，請檢查",
+        "loginError": "發生錯誤，請檢查您的賬號密碼是否正確",
         "notice": "EstherMusic 承諾不會保存您的任何賬號資訊到雲端。<br />您的密碼會在本地進行 MD5 加密後再傳輸到網易雲 API。<br />EstherMusic 並非網易雲官方網站，輸入帳號資訊前請慎重考慮。 您也可以前往<a href=\"https://github.com/soratanmer/EstherMusic\">EstherMusic 的 GitHub 原始碼 Repo</a>自行編譯並使用自託管的網易雲 API。",
         "noticeElectron": "您的密碼會在本地進行 MD5 加密後再傳輸到網易雲 API。<br />EstherMusic 不會傳輸你的帳號數據到任何非網易雲音樂官方的伺服器。<br />"
     },
@@ -85,10 +91,13 @@
     },
     "next": {
         "nowPlaying": "正在播放",
-        "nextUp": "即將播放"
+        "nextUp": "即將播放",
+        "playNextList": "插隊播放",
+        "clearPlayNextList": "清除隊列"
     },
     "player": {
         "like": "喜歡",
+        "disliked": "不喜歡",
         "previous": "上一首",
         "next": "下一首",
         "repeat": "循環播放",
@@ -97,10 +106,18 @@
         "play": "播放",
         "pause": "展廳",
         "mute": "靜音",
-        "nextUp": "播放清單"
+        "nextUp": "播放清單",
+        "audioSourceFormKuWo": "音源來自酷我"
     },
     "modal": {
-        "close": "關閉"
+        "close": "關閉",
+        "playlistDescription": "歌單介紹",
+        "newPlayList": "新建歌單",
+        "songs": "首歌",
+        "addToPlayList": "添加到歌單",
+        "setPrivatePlaylist": "设置为隐私歌单 設置爲隱私歌單",
+        "create": "創建",
+        "playlistTitle": "歌單標題"
     },
     "search": {
         "artist": "藝人",
@@ -109,12 +126,14 @@
         "mv": "影片",
         "playlist": "歌單",
         "noResult": "暫無結果",
-        "searchFor": "搜尋"
+        "searchFor": "搜尋",
+        "enterKeywords": "輸入關鍵字搜尋"
     },
     "settings": {
         "settings": "設定",
         "logout": "登出",
         "language": "語言",
+        "soundQuality": "音質",
         "musicQuality": {
             "text": "音質選擇",
             "low": "普通",
@@ -122,10 +141,12 @@
             "high": "極高",
             "lossless": "無損"
         },
+        "cache": "快取",
         "cacheLimit": {
             "text": "歌曲快取上綫",
             "none": "無限制"
         },
+        "lyric": "歌詞",
         "lyricFontSize": {
             "text": "歌詞字體大小",
             "small": "小",
@@ -133,6 +154,9 @@
             "large": "大 (默認)",
             "xlarge": "超大"
         },
+        "thirdParties": "第三方",
+        "open": "啓用",
+        "other": "其他",
         "deviceSelector": "音訊輸出裝置",
         "permissionRequired": "需要麥克風權限",
         "appearance": {
@@ -158,6 +182,20 @@
             "off": "關閉",
             "on": "開啟",
             "dynamic": "動態（GPU 占用較高）"
+        },
+        "proxy": "代理",
+        "proxyOptions": {
+            "close": "關閉代理",
+            "agreement": "代理協議",
+            "update": "更新代理",
+            "address": "服務器地址",
+            "port": "端口"
+        },
+        "shortcut": "快捷鍵",
+        "shortcutOptions": {
+            "functions": "功能",
+            "global": "全局快捷鍵",
+            "default": "恢復默認快捷鍵"
         }
     },
     "contextMenu": {
@@ -171,9 +209,8 @@
         "addToPlaylist": "新增至歌單",
         "searchInPlaylist": "歌單內搜尋",
         "copyUrl": "複製超連結",
-        "allPlaylists": "全部歌單",
-        "minePlaylists": "我建立的歌單",
-        "likedPlaylists": "收藏的歌單"
+        "deleteToQueue": "從隊列刪除",
+        "deleteToPlaylist": "從歌單刪除"
     },
     "toast": {
         "savedToPlaylist": "已新增至歌單",
@@ -182,6 +219,30 @@
         "removedFromMyLikedSongs": "已從喜歡的音樂中刪除",
         "copied": "已複製",
         "copyFailed": "複製失敗：",
-        "needToLogin": "此動作需要登入網易雲帳號"
+        "needToLogin": "此動作需要登入網易雲帳號",
+        "cannotPlay": "無法播放",
+        "cannotPlayDailyTracks": "無法播放每日推薦",
+        "playlist": "歌單",
+        "album": "專輯",
+        "artist": "藝人",
+        "CreatePlaylistsSucceed": "成功創建歌單",
+        "deletePlaylistsSucceed": "已刪除歌單",
+        "error": "發生錯誤",
+        "development": "此功能開發中",
+        "removeProxy": "已關閉代理",
+        "updateProxy": "已更新代理",
+        "savedShortcut": "快捷鍵已保存"
+    },
+    "FMCard": {
+        "personalFM": "私人FM"
+    },
+    "confirm": {
+        "logout": "確定要退出嗎？",
+        "removedFromPlaylist": "確定要從歌單刪除",
+        "deletePlaylists": "確定要刪除歌單"
+    },
+    "dailyTracks": {
+        "title": "每日歌曲推薦",
+        "subtitle": "根據你的音樂口味生成 · 每天06:00 更新"
     }
 }

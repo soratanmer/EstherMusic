@@ -1,14 +1,14 @@
 <template>
-    <Modal class="add-playlist-modal" :show="show" :close="close" title="新建歌单" width="25vw">
+    <Modal class="add-playlist-modal" :show="show" :close="close" :title="$t('modal.newPlayList')" width="25vw">
         <template #default>
-            <input v-model="title" type="text" placeholder="歌单标题" maxlength="40" />
+            <input v-model="title" type="text" :placeholder="$t('modal.playlistTitle')" maxlength="40" />
             <div class="checkbox">
                 <input id="checkbox-private" v-model="privatePlaylist" type="checkbox" />
-                <label for="checkbox-private">设置为隐私歌单</label>
+                <label for="checkbox-private">{{ $t('modal.setPrivatePlaylist') }}</label>
             </div>
         </template>
         <template #footer>
-            <button class="primary block" @click="createPlaylists">创建</button>
+            <button class="primary block" @click="createPlaylists">{{ $t('modal.create') }}</button>
         </template>
     </Modal>
 </template>
@@ -106,7 +106,7 @@
                             })
                         }
                         close()
-                        showToast('成功创建歌单')
+                        showToast(t('toast.CreatePlaylistsSucceed'))
                         updateData({
                             key: 'libraryPlaylistFilter',
                             value: 'mine',

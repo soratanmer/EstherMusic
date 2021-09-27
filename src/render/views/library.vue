@@ -42,14 +42,14 @@
                         :class="{ active: currentTab === 'minePlaylists' }"
                         @click="updateCurrentTab('minePlaylists')"
                     >
-                        我的歌单
+                        {{ $t('library.minePlaylists') }}
                     </div>
                     <div
                         class="tab"
                         :class="{ active: currentTab === 'likedPlaylists' }"
                         @click="updateCurrentTab('likedPlaylists')"
                     >
-                        收藏的歌单
+                        {{ $t('library.likedPlaylists') }}
                     </div>
                     <div class="tab" :class="{ active: currentTab === 'albums' }" @click="updateCurrentTab('albums')">
                         {{ $t('library.albums') }}

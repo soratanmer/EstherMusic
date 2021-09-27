@@ -61,7 +61,7 @@
         <div v-show="!haveResult" class="no-results">
             <div>
                 <svg-icon icon-name="search" />
-                {{ keywords.length === 0 ? '输入关键字搜索' : $t('search.noResult') }}
+                {{ keywords.length === 0 ? $t('search.enterKeywords') : $t('search.noResult') }}
             </div>
         </div>
     </div>

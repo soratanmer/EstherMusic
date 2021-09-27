@@ -341,21 +341,21 @@
                     showToast(t('toast.needToLogin'))
                     return
                 }
-                let confirmation = confirm(`确定要删除歌单 ${playlist.value.name}？`)
+                let confirmation = confirm(`${t('confirm.deletePlaylists')} ${playlist.value.name}？`)
                 if (confirmation === true) {
                     deletePlaylist(playlist.value.id).then((res) => {
                         if (res.code === 200) {
-                            showToast(`已删除歌单 ${playlist.value.name}`)
+                            showToast(`${t('toast.deletePlaylistsSucceed')} ${playlist.value.name}`)
                             router.go(-1)
                         } else {
-                            showToast('发生错误')
+                            showToast(t('toast.error'))
                         }
                     })
                 }
             }
 
             const editPlaylist = () => {
-                showToast('此功能开发中')
+                showToast(t('toast.development'))
             }
 
             const searchInPlaylist = () => {

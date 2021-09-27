@@ -22,6 +22,8 @@
         "likedSongs": "我喜欢的音乐",
         "sLikedSongs": "喜欢的音乐",
         "playlists": "歌单",
+        "minePlaylists": "我的歌单",
+        "likedPlaylists": "收藏的歌单",
         "albums": "专辑",
         "artists": "艺人",
         "mvs": "MV",
@@ -77,6 +79,10 @@
         "login": "登录",
         "loginWithEmail": "使用邮箱登录",
         "loginWithPhone": "使用手机号登录",
+        "incorrectPhone": "国家区号或手机号不正确",
+        "incorrectEmail": "邮箱不正确",
+        "checkAccountOrPassword": "账号或密码错误，请检查",
+        "loginError": "发生错误，请检查你的账号密码是否正确",
         "notice": "EstherMusic 承诺不会保存你的任何账号信息到云端。<br />你的密码会在本地进行 MD5 加密后再传输到网易云 API。<br />EstherMusic 并非网易云官方网站，输入账号信息前请慎重考虑。你也可以前往<a href=\"https://github.com/soratanmer/EstherMusic\">EstherMusic 的 GitHub 源代码仓库</a>自行构建并使用自托管的网易云 API。",
         "noticeElectron": "你的密码会在本地进行 MD5 加密后再传输到网易云 API。<br />EstherMusic 不会传输你的账号数据到任何非网易云音乐官方的服务器。<br />"
     },
@@ -85,10 +91,13 @@
     },
     "next": {
         "nowPlaying": "正在播放",
-        "nextUp": "即将播放"
+        "nextUp": "即将播放",
+        "playNextList": "插队播放",
+        "clearPlayNextList": "清除队列"
     },
     "player": {
         "like": "喜欢",
+        "disliked": "不喜欢",
         "previous": "上一首",
         "next": "下一首",
         "repeat": "循环播放",
@@ -97,11 +106,18 @@
         "play": "播放",
         "pause": "暂停",
         "mute": "静音",
-        "nextUp": "播放列表"
+        "nextUp": "播放列表",
+        "audioSourceFormKuWo": "音源来自酷我"
     },
     "modal": {
         "close": "关闭",
-        "playlistDescription": "歌单介绍"
+        "playlistDescription": "歌单介绍",
+        "newPlayList": "新建歌单",
+        "songs": "首歌",
+        "addToPlayList": "添加到歌单",
+        "setPrivatePlaylist": "设置为隐私歌单",
+        "create": "创建",
+        "playlistTitle": "歌单标题"
     },
     "search": {
         "artist": "艺人",
@@ -110,12 +126,14 @@
         "mv": "视频",
         "playlist": "歌单",
         "noResult": "暂无结果",
-        "searchFor": "搜索"
+        "searchFor": "搜索",
+        "enterKeywords": "输入关键字搜索"
     },
     "settings": {
         "settings": "设置",
         "logout": "登出",
         "language": "语言",
+        "soundQuality": "音质",
         "musicQuality": {
             "text": "音质选择",
             "low": "普通",
@@ -123,10 +141,12 @@
             "high": "极高",
             "lossless": "无损"
         },
+        "cache": "缓存",
         "cacheLimit": {
             "text": "歌曲缓存上限",
             "none": "无限制"
         },
+        "lyric": "歌词",
         "lyricFontSize": {
             "text": "歌词字体大小",
             "small": "小",
@@ -134,6 +154,9 @@
             "large": "大 (默认)",
             "xlarge": "超大"
         },
+        "thirdParties": "第三方",
+        "open": "启用",
+        "other": "其他",
         "deviceSelector": "音频输出设备",
         "permissionRequired": "需要麦克风权限",
         "appearance": {
@@ -159,6 +182,20 @@
             "off": "关闭",
             "on": "打开",
             "dynamic": "动态（GPU 占用较高）"
+        },
+        "proxy": "代理",
+        "proxyOptions": {
+            "close": "关闭代理",
+            "agreement": "代理协议",
+            "update": "更新代理",
+            "address": "服务器地址",
+            "port": "端口"
+        },
+        "shortcut": "快捷键",
+        "shortcutOptions": {
+            "functions": "功能",
+            "global": "全局快捷键",
+            "default": "恢复默认快捷键"
         }
     },
     "contextMenu": {
@@ -174,9 +211,8 @@
         "deletePlaylist": "删除歌单",
         "editPlaylist": "编辑歌单信息",
         "copyUrl": "复制链接",
-        "allPlaylists": "全部歌单",
-        "minePlaylists": "创建的歌单",
-        "likedPlaylists": "收藏的歌单"
+        "deleteToQueue": "从队列删除",
+        "deleteToPlaylist": "从歌单中删除"
     },
     "toast": {
         "savedToPlaylist": "已添加到歌单",
@@ -189,13 +225,28 @@
         "copyFailed": "复制失败：",
         "needToLogin": "此操作需要登录网易云帐号",
         "cannotPlay": "无法播放",
-        "dailyTracks": "每日推荐",
+        "cannotPlayDailyTracks": "无法播放每日推荐",
         "playlist": "歌单",
         "album": "专辑",
-        "artist": "艺人"
+        "artist": "艺人",
+        "CreatePlaylistsSucceed": "成功创建歌单",
+        "deletePlaylistsSucceed": "已删除歌单",
+        "error": "发生错误",
+        "development": "此功能开发中",
+        "removeProxy": "已关闭代理",
+        "updateProxy": "已更新代理设置",
+        "savedShortcut": "快捷键已保存"
     },
     "FMCard": {
         "personalFM": "私人FM"
     },
-    "DailyTracksCard": {}
+    "confirm": {
+        "logout": "确定要退出吗？",
+        "removedFromPlaylist": "确定要从歌单删除",
+        "deletePlaylists": "确定要删除歌单"
+    },
+    "dailyTracks": {
+        "title": "每日歌曲推荐",
+        "subtitle": "根据你的音乐口味生成 · 每天6:00更新"
+    }
 }

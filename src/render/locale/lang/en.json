@@ -25,6 +25,8 @@
         "likedSongs": "Liked Songs",
         "sLikedSongs": "'s Liked Songs",
         "playlists": "Playlists",
+        "minePlaylists": "My Playlists",
+        "likedPlaylists": "Liked Playlists",
         "albums": "Albums",
         "artists": "Artists",
         "mvs": "MVs",
@@ -80,6 +82,10 @@
         "login": "Login",
         "loginWithEmail": "Login with Email",
         "loginWithPhone": "Login with Phone",
+        "incorrectPhone": "Incorrect Country code or Phone number",
+        "incorrectEmail": "Incorrect Email address",
+        "checkAccountOrPassword": "Wrong account or password, please check",
+        "loginError": "An error has occurred, please check that your account password is correct",
         "notice": "EstherMusic promises not to save any of your account information to the cloud.<br />Your password will be MD5 encrypted locally and then transmitted to NetEase Music API.<br />EstherMusic is not the official website of NetEase Music, please consider carefully before entering account information. You can also go to <a href=\"https://github.com/soratanmer/EstherMusic\">EstherMusic's GitHub repository</a> to build and use the self-hosted NetEase Music API.",
         "noticeElectron": "Your password will be MD5 encrypted locally and then transmitted to NetEase Music API.<br />EstherMusic promises not to save any of your account information to the cloud.<br />"
     },
@@ -88,10 +94,13 @@
     },
     "next": {
         "nowPlaying": "Now Playing",
-        "nextUp": "Next Up"
+        "nextUp": "Next Up",
+        "playNextList": "Play in queue",
+        "clearPlayNextList": "Clear the queue"
     },
     "player": {
         "like": "Like",
+        "disliked": "Disliked",
         "previous": "Previous Song",
         "next": "Next Song",
         "repeat": "Repeat",
@@ -100,10 +109,18 @@
         "play": "Play",
         "pause": "Pause",
         "mute": "Mute",
-        "nextUp": "Next Up"
+        "nextUp": "Next Up",
+        "audioSourceFormKuWo": "Audio source from KuWo"
     },
     "modal": {
-        "close": "Close"
+        "close": "Close",
+        "playlistDescription": "Playlist introduction",
+        "newPlayList": "Create a new playlist",
+        "songs": "songs",
+        "addToPlayList": "Add to playlist",
+        "setPrivatePlaylist": "Set as private playlist",
+        "create": "Create",
+        "playlistTitle": "Playlist Title"
     },
     "search": {
         "artist": "Artists",
@@ -112,12 +129,14 @@
         "mv": "Music Videos",
         "playlist": "Playlists",
         "noResult": "No Results",
-        "searchFor": "Search for"
+        "searchFor": "Search for",
+        "enterKeywords": "Enter keywords to search"
     },
     "settings": {
         "settings": "Settings",
         "logout": "LOGOUT",
         "language": "Languages",
+        "soundQuality": "Music Quality",
         "musicQuality": {
             "text": "Music Quality",
             "low": "Low",
@@ -125,10 +144,12 @@
             "high": "High",
             "lossless": "Lossless"
         },
+        "cache": "Cache",
         "cacheLimit": {
             "text": "Songs Cache limit",
             "none": "None"
         },
+        "lyric": "Lyric",
         "lyricFontSize": {
             "text": "Lyric Font Size",
             "small": "Small",
@@ -136,6 +157,9 @@
             "large": "Large (Default)",
             "xlarge": "X-Large"
         },
+        "thirdParties": "Third Parties",
+        "open": "Open",
+        "other": "Other",
         "deviceSelector": "Audio Output Device",
         "permissionRequired": "Microphone Permission Required",
         "appearance": {
@@ -161,6 +185,20 @@
             "off": "Off",
             "on": "On",
             "dynamic": "Dynamic (High GPU usage)"
+        },
+        "proxy": "Proxy",
+        "proxyOptions": {
+            "close": "Close Proxy",
+            "agreement": "Agency agreement",
+            "update": "Update Proxy",
+            "address": "Server Address",
+            "port": "Port"
+        },
+        "shortcut": "shortcuts",
+        "shortcutOptions": {
+            "functions": "Function",
+            "global": "Global Shortcuts",
+            "default": "Restore default shortcuts"
         }
     },
     "contextMenu": {
@@ -173,9 +211,8 @@
         "addToPlaylist": "Add to playlist",
         "searchInPlaylist": "Search in playlist",
         "copyUrl": "Copy URL",
-        "allPlaylists": "All Playlists",
-        "minePlaylists": "My Playlists",
-        "likedPlaylists": "Liked Playlists"
+        "deleteToQueue": "Remove from queue",
+        "deleteToPlaylist": "Remove from Playlist"
     },
     "toast": {
         "savedToPlaylist": "Saved to playlist",
@@ -184,6 +221,30 @@
         "removedFromMyLikedSongs": "Removed from my Liked Songs",
         "copied": "Copied",
         "copyFailed": "Copy failed: ",
-        "needToLogin": "Need to log into netease account"
+        "needToLogin": "Need to log into netease account",
+        "cannotPlay": "Unable to play",
+        "cannotPlayDailyTracks": "Unable to play Daily Recommendation",
+        "playlist": "Playlist",
+        "album": "Album",
+        "artist": "Artist",
+        "CreatePlaylistsSucceed": "Successful Playlist creation",
+        "deletePlaylistsSucceed": "Deleted Playlist",
+        "error": "An error has occurred",
+        "development": "This feature is under development",
+        "removeProxy": "Closed Proxy",
+        "updateProxy": "Updated proxy settings",
+        "savedShortcut": "Shortcuts are saved"
+    },
+    "FMCard": {
+        "personalFM": "Private FM"
+    },
+    "confirm": {
+        "logout": "Sure you want to logout?",
+        "removedFromPlaylist": "Make sure you want to be removed from the playlist",
+        "deletePlaylists": "Make sure you want to delete the playlist"
+    },
+    "dailyTracks": {
+        "title": "Song of the Day",
+        "subtitle": "Generated to your musical tastes - updated daily at 6:00"
     }
 }

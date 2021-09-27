@@ -20,7 +20,7 @@
                 class="item"
                 @click="removeTrackFromQueue"
             >
-                从队列删除
+                {{ $t('contextMenu.deleteToQueue') }}
             </div>
             <hr />
             <div v-show="!isRightClickedTrackLiked" class="item" @click="like">
@@ -34,7 +34,7 @@
                 class="item"
                 @click="removeTrackFromPlaylist"
             >
-                从歌单中删除
+                {{ $t('contextMenu.deleteToPlaylist') }}
             </div>
             <div class="item" @click="addTrackToPlaylist">{{ $t('contextMenu.addToPlaylist') }}</div>
         </ContextMenu>
@@ -189,7 +189,7 @@
                 } else if (props.type === 'tracklist') {
                     let trackIDs = props.tracks.map((t) => t.id)
                     if (trackIDs === undefined) {
-                        dispatch('toast/showToast', `无法播放`, { root: true })
+                        dispatch('toast/showToast', `${t('toast.cannotPlay')}`, { root: true })
                     } else {
                         store.dispatch('player/replacePlaylist', { trackIDs, id: props.id, type: 'artist', trackID })
                     }
@@ -208,14 +208,14 @@
                 } else if (props.dbclickTrackFunc === 'playAList') {
                     let trackIDs = props.tracks.map((t) => t.id)
                     if (trackIDs === undefined) {
-                        dispatch('toast/showToast', `无法播放`, { root: true })
+                        dispatch('toast/showToast', `${t('toast.cannotPlay')}`, { root: true })
                     } else {
                         store.dispatch('player/replacePlaylist', { trackIDs, id: props.id, type: 'artist', trackID })
                     }
                 } else if (props.dbclickTrackFunc === 'dailyTracks') {
                     let trackIDs = props.tracks.map((t) => t.id)
                     if (trackIDs === undefined) {
-                        dispatch('toast/showToast', `无法播放`, { root: true })
+                        dispatch('toast/showToast', `${t('toast.cannotPlay')}`, { root: true })
                     } else {
                         store.dispatch('player/replacePlaylist', { trackIDs, id: '/daily/songs', type: 'url', trackID })
                     }
@@ -256,7 +256,7 @@
                     showToast(t('toast.needToLogin'))
                     return
                 }
-                if (confirm(`确定要从歌单删除 ${rightClickedTrack.value.name}？`)) {
+                if (confirm(`${t('confirm.removedFromPlaylist')} ${rightClickedTrack.value.name}？`)) {
                     let trackID = rightClickedTrack.value.id
                     addOrRemoveTrackFromPlaylist({
                         op: 'del',

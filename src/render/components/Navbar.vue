@@ -69,6 +69,7 @@
     import { useRouter, useRoute } from 'vue-router'
     import { useStore } from 'vuex'
     import isElectron from 'is-electron'
+    import { useI18n } from 'vue-i18n'
 
     import '@vscode/codicons/dist/codicon.css'
 
@@ -92,6 +93,7 @@
             const route = useRoute()
             const store = useStore()
             const { proxy } = getCurrentInstance()
+            const { t } = useI18n()
 
             const inputFocus = ref(false)
             const langs = ref(['zh-CN', 'zh-TW', 'en', 'tr'])
@@ -139,7 +141,7 @@
             }
 
             const logout = () => {
-                if (!confirm('确定要退出吗？')) {
+                if (!confirm(t('confirm.logout'))) {
                     return
                 }
                 doLogout()

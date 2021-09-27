@@ -1,8 +1,8 @@
 <template>
     <div v-show="show">
         <div class="special-playlist">
-            <div class="title gradient">每日歌曲推荐</div>
-            <div class="subtitle">根据你的音乐口味生成 · 每天6:00更新</div>
+            <div class="title gradient">{{ $t('dailyTracks.title') }}</div>
+            <div class="subtitle">{{ $t('dailyTracks.subtitle') }}</div>
         </div>
 
         <TrackList :tracks="dailyTracks" type="playlist" dbclick-track-func="dailyTracks" />

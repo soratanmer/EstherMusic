@@ -87,7 +87,7 @@
                 }
                 let trackIDs = dailyTracks.value.map((track) => track.id)
                 if (trackIDs === undefined) {
-                    dispatch('toast/showToast', `无法播放每日推荐`, { root: true })
+                    dispatch('toast/showToast', `${t('toast.cannotPlayDailyTracks')}`, { root: true })
                 } else {
                     store.dispatch('player/replacePlaylist', {
                         trackIDs,

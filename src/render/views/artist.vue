@@ -241,7 +241,7 @@
             const playPopularSongs = (trackID = 'first') => {
                 let trackIDs = popularTracks.value.map((track) => track.id)
                 if (trackIDs === undefined) {
-                    dispatch('toast/showToast', `无法播放 ${artist.value.name}`, { root: true })
+                    dispatch('toast/showToast', `${t('toast.cannotPlay')} ${artist.value.name}`, { root: true })
                 } else {
                     store.dispatch('player/replacePlaylist', { trackIDs, id: artist.value.id, type: 'artist', trackID })
                 }

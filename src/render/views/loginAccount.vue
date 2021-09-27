@@ -88,6 +88,7 @@
     import NProgress from 'nprogress'
     import md5 from 'md5'
     import is_electron from 'is-electron'
+    import { useI18n } from 'vue-i18n'
 
     import { loginWithPhone, loginWithEmail } from '@render/NeteastApi/auth'
 
@@ -104,6 +105,7 @@
             const store = useStore()
             const router = useRouter()
             const route = useRoute()
+            const { t } = useI18n()
 
             const processing = ref(false)
             const mode = ref('email')
@@ -128,7 +130,7 @@
 
             const validatePhone = () => {
                 if (countryCode.value === '' || phone.value === '' || password.value === '') {
-                    showToast('国家区号或手机号不正确')
+                    showToast(t('login.incorrectPhone'))
                     processing.value = false
                     return false
                 }
@@ -139,7 +141,7 @@
                 const emailReg =
                     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                 if (email.value === '' || password.value === '' || !emailReg.test(email.value)) {
-                    showToast('邮箱不正确')
+                    showToast(t('login.incorrectEmail'))
                     return false
                 }
                 return true
@@ -161,7 +163,7 @@
                     })
                 } else {
                     processing.value = false
-                    showToast(res.msg ?? res.message ?? '账号或密码错误，请检查')
+                    showToast(res.msg ?? res.message ?? t('login.checkAccountOrPassword'))
                 }
             }
 
@@ -180,7 +182,7 @@
                         .then(handleLoginResponse)
                         .catch((error) => {
                             processing.value = false
-                            showToast(`发生错误，请检查你的账号密码是否正确\n${error}`)
+                            showToast(`${t('login.loginError')}\n${error}`)
                         })
                 } else {
                     processing.value = validateEmail()
@@ -195,7 +197,7 @@
                         .then(handleLoginResponse)
                         .catch((error) => {
                             processing.value = false
-                            showToast(`发生错误，请检查你的账号密码是否正确\n${error}`)
+                            showToast(`${t('login.loginError')}\n${error}`)
                         })
                 }
             }
