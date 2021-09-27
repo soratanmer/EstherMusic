@@ -1,17 +1,17 @@
 import { createI18n } from 'vue-i18n'
 import store from '@render/store'
 
-import en from '@render/locale/lang/en.json'
-import zhCN from '@render/locale/lang/zh-CN.json'
-import zhTW from '@render/locale/lang/zh-TW.json'
+import enGB from '@render/locale/lang/en-GB.json'
+import zhCHS from '@render/locale/lang/zh-CHS.json'
+import zhCHT from '@render/locale/lang/zh-CHT.json'
 
 const i18n = createI18n({
     locale: store.state.settings.lang,
     globalInjection: true,
     messages: {
-        en,
-        'zh-CN': zhCN,
-        'zh-TW': zhTW,
+        'en-GB': enGB,
+        'zh-CHS': zhCHS,
+        'zh-CHT': zhCHT,
     },
 })
 

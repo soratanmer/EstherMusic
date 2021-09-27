@@ -1,6 +1,6 @@
 {
     "common": {
-        "play": "PLAY",
+        "play": "Play",
         "songs": "Songs"
     },
     "nav": {
@@ -14,23 +14,23 @@
         "settings": "Settings"
     },
     "home": {
-        "recommendPlaylist": "Recommended Playlists",
-        "recommendArtist": "Recommended Artists",
-        "newAlbum": "Latest Albums",
-        "seeMore": "SEE MORE",
+        "recommendPlaylist": "Recommended playlists",
+        "recommendArtist": "Recommended artists",
+        "newAlbum": "Latest albums",
+        "seeMore": "See more",
         "charts": "Charts"
     },
     "library": {
-        "sLibrary": "'s Library",
-        "likedSongs": "Liked Songs",
-        "sLikedSongs": "'s Liked Songs",
+        "sLibrary": "'s library",
+        "likedSongs": "Liked songs",
+        "sLikedSongs": "'s Liked songs",
         "playlists": "Playlists",
-        "minePlaylists": "My Playlists",
-        "likedPlaylists": "Liked Playlists",
+        "minePlaylists": "My playlists",
+        "likedPlaylists": "Liked playlists",
         "albums": "Albums",
         "artists": "Artists",
         "mvs": "MVs",
-        "newPlayList": "New Playlist",
+        "newPlayList": "New playlist",
         "userProfileMenu": {
             "settings": "Settings",
             "logout": "Logout"
@@ -38,27 +38,27 @@
     },
     "explore": {
         "explore": "Explore",
-        "loadMore": "Load More"
+        "loadMore": "Load more"
     },
     "artist": {
-        "latestRelease": "Latest Releases",
+        "latestRelease": "Latest releases",
         "latestMV": "Latest MV",
-        "popularSongs": "Popular Songs",
-        "showMore": "SHOW MORE",
-        "showLess": "SHOW LESS",
+        "popularSongs": "Popular songs",
+        "showMore": "Show more",
+        "showLess": "Show less",
         "EPsSingles": "EPs & Singles",
         "albums": "Albums",
         "withAlbums": "Albums",
         "artist": "Artist",
-        "videos": "Music Videos",
+        "videos": "Music videos",
         "following": "Following",
         "follow": "Follow",
-        "similarArtists": "Similar Artists",
-        "artistDesc": "Artist Description"
+        "similarArtists": "Similar artists",
+        "artistDesc": "Artist description"
     },
     "album": {
         "released": "Released",
-        "albumDesc": "Album Description"
+        "albumDesc": "Album description"
     },
     "playlist": {
         "playlist": "Playlists",
@@ -67,10 +67,10 @@
     },
     "login": {
         "accessToAll": "Access to all data",
-        "loginText": "Login to Netease",
+        "loginText": "Login to netease",
         "search": "Search account",
         "readonly": "Only access to public data",
-        "usernameLogin": "Username Login",
+        "usernameLogin": "Username login",
         "searchHolder": "Your account username",
         "enterTip": "Press 'enter' to search",
         "choose": "Choose your account",
@@ -80,36 +80,36 @@
         "email": "Email address",
         "password": "Password",
         "login": "Login",
-        "loginWithEmail": "Login with Email",
-        "loginWithPhone": "Login with Phone",
-        "incorrectPhone": "Incorrect Country code or Phone number",
-        "incorrectEmail": "Incorrect Email address",
+        "loginWithEmail": "Login with email",
+        "loginWithPhone": "Login with phone",
+        "incorrectPhone": "Incorrect country code or phone number",
+        "incorrectEmail": "Incorrect email address",
         "checkAccountOrPassword": "Wrong account or password, please check",
         "loginError": "An error has occurred, please check that your account password is correct",
         "notice": "EstherMusic promises not to save any of your account information to the cloud.<br />Your password will be MD5 encrypted locally and then transmitted to NetEase Music API.<br />EstherMusic is not the official website of NetEase Music, please consider carefully before entering account information. You can also go to <a href=\"https://github.com/soratanmer/EstherMusic\">EstherMusic's GitHub repository</a> to build and use the self-hosted NetEase Music API.",
         "noticeElectron": "Your password will be MD5 encrypted locally and then transmitted to NetEase Music API.<br />EstherMusic promises not to save any of your account information to the cloud.<br />"
     },
     "mv": {
-        "moreVideo": "More Videos"
+        "moreVideo": "More videos"
     },
     "next": {
-        "nowPlaying": "Now Playing",
-        "nextUp": "Next Up",
+        "nowPlaying": "Now playing",
+        "nextUp": "Next up",
         "playNextList": "Play in queue",
         "clearPlayNextList": "Clear the queue"
     },
     "player": {
         "like": "Like",
         "disliked": "Disliked",
-        "previous": "Previous Song",
-        "next": "Next Song",
+        "previous": "Previous song",
+        "next": "Next song",
         "repeat": "Repeat",
-        "repeatTrack": "Repeat Track",
+        "repeatTrack": "Repeat track",
         "shuffle": "Shuffle",
         "play": "Play",
         "pause": "Pause",
         "mute": "Mute",
-        "nextUp": "Next Up",
+        "nextUp": "Next up",
         "audioSourceFormKuWo": "Audio source from KuWo"
     },
     "modal": {
@@ -120,25 +120,38 @@
         "addToPlayList": "Add to playlist",
         "setPrivatePlaylist": "Set as private playlist",
         "create": "Create",
-        "playlistTitle": "Playlist Title"
+        "playlistTitle": "Playlist title"
     },
     "search": {
         "artist": "Artists",
         "album": "Albums",
         "song": "Songs",
-        "mv": "Music Videos",
+        "mv": "Music videos",
         "playlist": "Playlists",
-        "noResult": "No Results",
+        "noResult": "No results",
         "searchFor": "Search for",
         "enterKeywords": "Enter keywords to search"
     },
     "settings": {
         "settings": "Settings",
         "logout": "LOGOUT",
-        "language": "Languages",
-        "soundQuality": "Music Quality",
+        "language": {
+            "text": "Languages",
+            "en-GB": "English - United Kingdom",
+            "zh-CHS": "Chinese (Simplified)",
+            "zh-CHT": "Chinese (Traditional)"
+        },
+        "musicLanguagePreference": {
+            "text": "Music Language Preference",
+            "noPreference": "No preference",
+            "chinese": "Chinese",
+            "english": "English",
+            "Japanese": "Japanese",
+            "Korean": "Korean"
+        },
+        "soundQuality": "Music quality",
         "musicQuality": {
-            "text": "Music Quality",
+            "text": "Music quality",
             "low": "Low",
             "medium": "Medium",
             "high": "High",
@@ -146,22 +159,22 @@
         },
         "cache": "Cache",
         "cacheLimit": {
-            "text": "Songs Cache limit",
+            "text": "Songs cache limit",
             "none": "None"
         },
         "lyric": "Lyric",
         "lyricFontSize": {
-            "text": "Lyric Font Size",
+            "text": "Lyric font size",
             "small": "Small",
             "medium": "Medium",
             "large": "Large (Default)",
             "xlarge": "X-Large"
         },
-        "thirdParties": "Third Parties",
+        "thirdParties": "Third parties",
         "open": "Open",
         "other": "Other",
-        "deviceSelector": "Audio Output Device",
-        "permissionRequired": "Microphone Permission Required",
+        "deviceSelector": "Audio output device",
+        "permissionRequired": "Microphone permission required",
         "appearance": {
             "text": "Appearance",
             "auto": "Auto",
@@ -169,69 +182,69 @@
             "dark": "Dark"
         },
         "automaticallyCacheSongs": "Automatically cache songs",
-        "clearSongsCache": "Clear Songs Cache",
+        "clearSongsCache": "Clear songs cache",
         "cacheCount": "Cached {song} songs ({size})",
         "showLyricsTranslation": "Show lyrics translation",
         "showLyricsDynamicBackground": "Show lyrics dynamic background",
         "minimizeToTray": "Minimize to tray",
-        "showGitHubIcon": "Show GitHub icon",
+        "showGitHubIcon": "Show gitHub icon",
         "showUnavailableSongInGreyStyle": "Show unavailable song in grey style",
         "showPlaylistsByAppleMusic": "Show playlists by Apple Music",
         "enableDiscordRichPresence": "Enable Discord Rich Presence",
-        "enableGlobalShortcut": "Enable Global Shortcut",
+        "enableGlobalShortcut": "Enable global shortcut",
         "showLibraryDefault": "Show library default",
         "lyricsBackground": {
-            "text": "Show Lyrics Background",
+            "text": "Show lyrics background",
             "off": "Off",
             "on": "On",
             "dynamic": "Dynamic (High GPU usage)"
         },
         "proxy": "Proxy",
         "proxyOptions": {
-            "close": "Close Proxy",
+            "close": "Close proxy",
             "agreement": "Agency agreement",
-            "update": "Update Proxy",
-            "address": "Server Address",
+            "update": "Update proxy",
+            "address": "Server address",
             "port": "Port"
         },
         "shortcut": "shortcuts",
         "shortcutOptions": {
             "functions": "Function",
-            "global": "Global Shortcuts",
+            "global": "Global shortcuts",
             "default": "Restore default shortcuts"
         }
     },
     "contextMenu": {
         "play": "Play",
-        "playNext": "Play Next",
-        "saveToMyLikedSongs": "Save to my Liked Songs",
-        "removeFromMyLikedSongs": "Remove from my Liked Songs",
+        "playNext": "Play next",
+        "saveToMyLikedSongs": "Save to my liked songs",
+        "removeFromMyLikedSongs": "Remove from my liked songs",
         "saveToLibrary": "Save to library",
         "removeFromLibrary": "Remove from library",
         "addToPlaylist": "Add to playlist",
         "searchInPlaylist": "Search in playlist",
         "copyUrl": "Copy URL",
         "deleteToQueue": "Remove from queue",
-        "deleteToPlaylist": "Remove from Playlist"
+        "deleteToPlaylist": "Remove from playlist"
     },
     "toast": {
         "savedToPlaylist": "Saved to playlist",
         "removedFromPlaylist": "Removed from playlist",
-        "savedToMyLikedSongs": "Saved to my Liked Songs",
-        "removedFromMyLikedSongs": "Removed from my Liked Songs",
+        "savedToMyLikedSongs": "Saved to my liked songs",
+        "removedFromMyLikedSongs": "Removed from my liked songs",
         "copied": "Copied",
         "copyFailed": "Copy failed: ",
         "needToLogin": "Need to log into netease account",
         "cannotPlay": "Unable to play",
-        "cannotPlayDailyTracks": "Unable to play Daily Recommendation",
+        "cannotPlayDailyTracks": "Unable to play daily recommendation",
         "playlist": "Playlist",
         "album": "Album",
         "artist": "Artist",
-        "CreatePlaylistsSucceed": "Successful Playlist creation",
-        "deletePlaylistsSucceed": "Deleted Playlist",
+        "CreatePlaylistsSucceed": "Successful playlist creation",
+        "deletePlaylistsSucceed": "Deleted playlist",
         "error": "An error has occurred",
         "development": "This feature is under development",
-        "removeProxy": "Closed Proxy",
+        "removeProxy": "Closed proxy",
         "updateProxy": "Updated proxy settings",
         "savedShortcut": "Shortcuts are saved"
     },
@@ -244,7 +257,7 @@
         "deletePlaylists": "Make sure you want to delete the playlist"
     },
     "dailyTracks": {
-        "title": "Song of the Day",
+        "title": "Song of the day",
         "subtitle": "Generated to your musical tastes - updated daily at 6:00"
     }
 }

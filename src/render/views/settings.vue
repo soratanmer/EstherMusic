@@ -28,13 +28,13 @@
 
             <div class="item">
                 <div class="left">
-                    <div class="title">{{ $t('settings.language') }}</div>
+                    <div class="title">{{ $t('settings.language.text') }}</div>
                 </div>
                 <div class="right">
                     <select v-model="lang">
-                        <option value="en">🇬🇧 English</option>
-                        <option value="zh-CN">🇨🇳 简体中文</option>
-                        <option value="zh-TW">ᴛᴡ 繁體中文</option>
+                        <option value="en-GB">{{ $t('settings.language.en-GB') }}</option>
+                        <option value="zh-CHS">{{ $t('settings.language.zh-CHS') }}</option>
+                        <option value="zh-CHT">{{ $t('settings.language.zh-CHT') }}</option>
                     </select>
                 </div>
             </div>
@@ -57,15 +57,15 @@
 
             <div class="item">
                 <div class="left">
-                    <div class="title"> 音乐语种偏好 </div>
+                    <div class="title">{{ $t('settings.musicLanguagePreference.text') }}</div>
                 </div>
                 <div class="right">
                     <select v-model="musicLanguage">
-                        <option value="all">无偏好</option>
-                        <option value="zh">华语</option>
-                        <option value="ea">欧美</option>
-                        <option value="jp">日语</option>
-                        <option value="kr">韩语</option>
+                        <option value="all">{{ $t('settings.musicLanguagePreference.noPreference') }}</option>
+                        <option value="zh">{{ $t('settings.musicLanguagePreference.chinese') }}</option>
+                        <option value="ea">{{ $t('settings.musicLanguagePreference.english') }}</option>
+                        <option value="jp">{{ $t('settings.musicLanguagePreference.Japanese') }}</option>
+                        <option value="kr">{{ $t('settings.musicLanguagePreference.Korean') }}</option>
                     </select>
                 </div>
             </div>

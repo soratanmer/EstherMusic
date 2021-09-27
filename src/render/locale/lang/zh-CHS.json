@@ -60,7 +60,7 @@
     "playlist": {
         "playlist": "歌单",
         "updatedAt": "最后更新于",
-        "search": "搜索歌单音乐"
+        "search": "搜索歌单内音乐"
     },
     "login": {
         "accessToAll": "可访问全部数据",
@@ -132,7 +132,20 @@
     "settings": {
         "settings": "设置",
         "logout": "登出",
-        "language": "语言",
+        "language": {
+            "text": "语言",
+            "en-GB": "英文 - 英国",
+            "zh-CHS": "简体中文",
+            "zh-CHT": "繁体中文"
+        },
+        "musicLanguagePreference": {
+            "text": "音乐语种偏好",
+            "noPreference": "无偏好",
+            "chinese": "华语",
+            "english": "欧美",
+            "Japanese": "日语",
+            "Korean": "韩语"
+        },
         "soundQuality": "音质",
         "musicQuality": {
             "text": "音质选择",
@@ -241,12 +254,12 @@
         "personalFM": "私人FM"
     },
     "confirm": {
-        "logout": "确定要退出吗？",
+        "logout": "确定要注销吗？",
         "removedFromPlaylist": "确定要从歌单删除",
         "deletePlaylists": "确定要删除歌单"
     },
     "dailyTracks": {
         "title": "每日歌曲推荐",
-        "subtitle": "根据你的音乐口味生成 · 每天6:00更新"
+        "subtitle": "根据你的音乐口味生成 · 每天06:00更新"
     }
 }

@@ -7,7 +7,7 @@
         "home": "首頁",
         "explore": "發現",
         "library": "音樂庫",
-        "search": "搜尋",
+        "search": "搜索",
         "github": "GitHub Repo"
     },
     "home": {
@@ -27,15 +27,15 @@
         "albums": "專輯",
         "artists": "藝人",
         "mvs": "MV",
-        "newPlayList": "新增歌單",
+        "newPlayList": "新建歌單",
         "userProfileMenu": {
-            "settings": "設定",
+            "settings": "設置",
             "logout": "登出"
         }
     },
     "explore": {
-        "explore": "探索",
-        "loadMore": "載入更多"
+        "explore": "發現",
+        "loadMore": "加載更多"
     },
     "artist": {
         "latestRelease": "最新發佈",
@@ -48,8 +48,8 @@
         "withAlbums": "張專輯",
         "artist": "藝人",
         "videos": "個 MV",
-        "following": "正在追蹤",
-        "follow": "追蹤",
+        "following": "正在關注",
+        "follow": "關注",
         "similarArtists": "相似藝人",
         "artistDesc": "藝術家介紹"
     },
@@ -60,34 +60,34 @@
     "playlist": {
         "playlist": "歌單",
         "updatedAt": "最後更新於",
-        "search": "搜尋歌單内音樂"
+        "search": "搜索歌單内音樂"
     },
     "login": {
-        "accessToAll": "可存取全部數據",
-        "loginText": "登入網易雲賬號",
-        "search": "搜尋網易雲賬號",
+        "accessToAll": "可訪問全部數據",
+        "loginText": "登錄網易雲賬號",
+        "search": "搜索網易雲賬號",
         "readonly": "只能讀取賬號公開數據",
-        "usernameLogin": "使用者名稱登入",
-        "searchHolder": "請錄入您的網易雲使用者名稱",
-        "enterTip": "按 Enter 搜尋",
-        "choose": "在選單中選擇你的賬號",
+        "usernameLogin": "用戶名登錄",
+        "searchHolder": "請輸入你的網易雲用戶名",
+        "enterTip": "按 Enter 搜索",
+        "choose": "在列表中選中你的賬號",
         "confirm": "確認",
-        "countryCode": "國際區碼",
-        "phone": "手機號碼",
-        "email": "Email",
+        "countryCode": "國際區號",
+        "phone": "手機號",
+        "email": "郵箱",
         "password": "密碼",
-        "login": "登入",
-        "loginWithEmail": "信箱登入",
-        "loginWithPhone": "手機號碼登入",
-        "incorrectPhone": "國家區碼或手機號碼不正確",
-        "incorrectEmail": "信箱不正確",
+        "login": "登錄",
+        "loginWithEmail": "使用郵箱登錄",
+        "loginWithPhone": "使用手機號登錄",
+        "incorrectPhone": "國際區號或手機號不正確",
+        "incorrectEmail": "郵箱不正塙",
         "checkAccountOrPassword": "賬號或密碼錯誤，請檢查",
         "loginError": "發生錯誤，請檢查您的賬號密碼是否正確",
-        "notice": "EstherMusic 承諾不會保存您的任何賬號資訊到雲端。<br />您的密碼會在本地進行 MD5 加密後再傳輸到網易雲 API。<br />EstherMusic 並非網易雲官方網站，輸入帳號資訊前請慎重考慮。 您也可以前往<a href=\"https://github.com/soratanmer/EstherMusic\">EstherMusic 的 GitHub 原始碼 Repo</a>自行編譯並使用自託管的網易雲 API。",
-        "noticeElectron": "您的密碼會在本地進行 MD5 加密後再傳輸到網易雲 API。<br />EstherMusic 不會傳輸你的帳號數據到任何非網易雲音樂官方的伺服器。<br />"
+        "notice": "EstherMusic 承諾不會保存你的任何賬號信息到雲端。<br />你的密碼會在本地進行 MD5 加密後再傳輸到網易雲 API。<br />EstherMusic 並非網易雲官方網站，輸入帳號信息前請慎重考慮。 你也可以前往<a href=\"https://github.com/soratanmer/EstherMusic\">EstherMusic 的 GitHub 源代碼倉庫</a>自行構建並使用自託管的網易雲 API。",
+        "noticeElectron": "你的密碼會在本地進行 MD5 加密後再傳輸到網易雲 API。<br />EstherMusic 不會傳輸你的帳號數據到任何非網易雲音樂官方的服務器。<br />"
     },
     "mv": {
-        "moreVideo": "更多影片"
+        "moreVideo": "更多視頻"
     },
     "next": {
         "nowPlaying": "正在播放",
@@ -104,9 +104,9 @@
         "repeatTrack": "單曲循環",
         "shuffle": "隨機播放",
         "play": "播放",
-        "pause": "展廳",
+        "pause": "暫停",
         "mute": "靜音",
-        "nextUp": "播放清單",
+        "nextUp": "播放列表",
         "audioSourceFormKuWo": "音源來自酷我"
     },
     "modal": {
@@ -115,7 +115,7 @@
         "newPlayList": "新建歌單",
         "songs": "首歌",
         "addToPlayList": "添加到歌單",
-        "setPrivatePlaylist": "设置为隐私歌单 設置爲隱私歌單",
+        "setPrivatePlaylist": "設置爲隱私歌單",
         "create": "創建",
         "playlistTitle": "歌單標題"
     },
@@ -123,16 +123,29 @@
         "artist": "藝人",
         "album": "專輯",
         "song": "歌曲",
-        "mv": "影片",
+        "mv": "視頻",
         "playlist": "歌單",
         "noResult": "暫無結果",
-        "searchFor": "搜尋",
-        "enterKeywords": "輸入關鍵字搜尋"
+        "searchFor": "搜索",
+        "enterKeywords": "輸入關鍵字搜索"
     },
     "settings": {
-        "settings": "設定",
+        "settings": "設置",
         "logout": "登出",
-        "language": "語言",
+        "language": {
+            "text": "語言",
+            "en-GB": "英文 - 英國",
+            "zh-CHS": "簡體中文",
+            "zh-CHT": "繁體中文"
+        },
+        "musicLanguagePreference": {
+            "text": "音樂語種偏好",
+            "noPreference": "無偏好",
+            "chinese": "華語",
+            "english": "歐美",
+            "Japanese": "日語",
+            "Korean": "韓語"
+        },
         "soundQuality": "音質",
         "musicQuality": {
             "text": "音質選擇",
@@ -141,9 +154,9 @@
             "high": "極高",
             "lossless": "無損"
         },
-        "cache": "快取",
+        "cache": "緩存",
         "cacheLimit": {
-            "text": "歌曲快取上綫",
+            "text": "歌曲緩存上限",
             "none": "無限制"
         },
         "lyric": "歌詞",
@@ -155,9 +168,9 @@
             "xlarge": "超大"
         },
         "thirdParties": "第三方",
-        "open": "啓用",
+        "open": "啟用",
         "other": "其他",
-        "deviceSelector": "音訊輸出裝置",
+        "deviceSelector": "音頻輸出設備",
         "permissionRequired": "需要麥克風權限",
         "appearance": {
             "text": "外觀",
@@ -165,17 +178,17 @@
             "light": "淺色",
             "dark": "深色"
         },
-        "automaticallyCacheSongs": "自動快取歌曲",
-        "clearSongsCache": "清除歌曲快取",
-        "cacheCount": "已快取 {song} 首 ({size})",
+        "automaticallyCacheSongs": "自動緩存歌曲",
+        "clearSongsCache": "清除歌曲緩存",
+        "cacheCount": "已緩存 {song} 首 ({size})",
         "showLyricsTranslation": "顯示歌詞翻譯",
         "showLyricsDynamicBackground": "顯示歌詞動態背景",
-        "minimizeToTray": "最小化到系統列",
+        "minimizeToTray": "最小化到托盤",
         "showGitHubIcon": "顯示 GitHub 圖標",
         "showUnavailableSongInGreyStyle": "顯示不可播放的歌曲為灰色",
         "showPlaylistsByAppleMusic": "首頁顯示來自 Apple Music 的歌單",
         "enableDiscordRichPresence": "啟用 Discord Rich Presence",
-        "enableGlobalShortcut": "啟用全域快捷鍵",
+        "enableGlobalShortcut": "啟用全局快捷鍵",
         "showLibraryDefault": "啟動後顯示音樂庫",
         "lyricsBackground": {
             "text": "顯示歌詞背景",
@@ -200,26 +213,26 @@
     },
     "contextMenu": {
         "play": "播放",
-        "playNext": "下一首不妨",
-        "addToQueue": "新增至隊列",
-        "saveToMyLikedSongs": "新增至我喜歡的音樂",
+        "playNext": "下一首播放",
+        "addToQueue": "添加到隊列",
+        "saveToMyLikedSongs": "添加到我喜歡的音樂",
         "removeFromMyLikedSongs": "從喜歡的音樂中刪除",
-        "saveToLibrary": "新增至音樂庫",
+        "saveToLibrary": "保存到音樂庫",
         "removeFromLibrary": "從音樂庫刪除",
-        "addToPlaylist": "新增至歌單",
-        "searchInPlaylist": "歌單內搜尋",
-        "copyUrl": "複製超連結",
+        "addToPlaylist": "添加到歌單",
+        "searchInPlaylist": "歌單內搜索",
+        "copyUrl": "複製鏈接",
         "deleteToQueue": "從隊列刪除",
         "deleteToPlaylist": "從歌單刪除"
     },
     "toast": {
-        "savedToPlaylist": "已新增至歌單",
+        "savedToPlaylist": "已添加到歌單",
         "removedFromPlaylist": "已從歌單中刪除",
-        "savedToMyLikedSongs": "已新增至我喜歡的音樂",
+        "savedToMyLikedSongs": "已添加到我喜歡的音樂",
         "removedFromMyLikedSongs": "已從喜歡的音樂中刪除",
         "copied": "已複製",
         "copyFailed": "複製失敗：",
-        "needToLogin": "此動作需要登入網易雲帳號",
+        "needToLogin": "此操作需要登錄網易雲帳號",
         "cannotPlay": "無法播放",
         "cannotPlayDailyTracks": "無法播放每日推薦",
         "playlist": "歌單",
@@ -237,7 +250,7 @@
         "personalFM": "私人FM"
     },
     "confirm": {
-        "logout": "確定要退出嗎？",
+        "logout": "確定要注銷嗎？",
         "removedFromPlaylist": "確定要從歌單刪除",
         "deletePlaylists": "確定要刪除歌單"
     },
