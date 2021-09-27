@@ -325,6 +325,7 @@ const actions = {
         return getTrackDetail(id).then((data) => {
             let track = data.songs[0]
             commit('setCurrentTrack', track)
+            dispatch('user/updateHistory', track, { root: true })
             dispatch('updateMediaSessionMetaData', track)
             return dispatch('getAudioSource', track).then((source) => {
                 if (source) {

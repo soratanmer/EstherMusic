@@ -5,6 +5,7 @@ import modals from './modals'
 import data from './data'
 import settings from './settings'
 import liked from './liked'
+import user from './user'
 
 export default {
     player,
@@ -14,4 +15,5 @@ export default {
     data,
     settings,
     liked,
+    user,
 }

@@ -80,6 +80,15 @@
                         ><svg-icon icon-name="list"
                     /></button-icon>
                     <button-icon
+                        :title="$t('player.history')"
+                        :class="{
+                            active: route.name === 'history',
+                            disabled: player.isPersonalFM,
+                        }"
+                        @click="goToHistoryPage"
+                        ><svg-icon icon-name="history"
+                    /></button-icon>
+                    <button-icon
                         :class="{
                             active: player.repeatMode !== 'off',
                             disabled: player.isPersonalFM,
@@ -243,6 +252,17 @@
                       })
             }
 
+            const goToHistoryPage = () => {
+                if (player.value.isPersonalFM) {
+                    return
+                }
+                route.name === 'history'
+                    ? router.go(-1)
+                    : router.push({
+                          name: 'history',
+                      })
+            }
+
             const formatVolume = (value) => {
                 return value.toLocaleString('zh-Hans-CN', { style: 'percent' })
             }
@@ -328,6 +348,7 @@
                 playing,
                 audioSource,
                 goToNextTracksPage,
+                goToHistoryPage,
                 formatVolume,
                 goToList,
                 goToAlbum,

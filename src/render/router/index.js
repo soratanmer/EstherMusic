@@ -70,6 +70,15 @@ const routes = [
         },
     },
     {
+        path: '/history',
+        name: 'history',
+        component: () => import('@render/views/history.vue'),
+        meta: {
+            keepAlive: true,
+            savePosition: true,
+        },
+    },
+    {
         path: '/search/:keywords?',
         name: 'search',
         component: () => import('@render/views/search.vue'),

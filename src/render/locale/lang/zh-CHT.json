@@ -107,6 +107,7 @@
         "pause": "暫停",
         "mute": "靜音",
         "nextUp": "播放列表",
+        "history": "播放歷史",
         "audioSourceFormKuWo": "音源來自酷我"
     },
     "modal": {
@@ -257,5 +258,9 @@
     "dailyTracks": {
         "title": "每日歌曲推薦",
         "subtitle": "根據你的音樂口味生成 · 每天06:00 更新"
+    },
+    "history": {
+        "text": "播放歷史",
+        "describe": "最近播放的一百首歌。"
     }
 }

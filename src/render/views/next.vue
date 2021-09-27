@@ -3,8 +3,8 @@
         <h1>{{ $t('next.nowPlaying') }}</h1>
         <TrackList :tracks="[currentTrack]" type="playlist" dbclick-track-func="none" />
         <h1 v-show="playNextList.length > 0">
-            {{$t('next.playNextList')}}
-            <button @click="clearPlayNextList()">{{$t('next.clearPlayNextList')}}</button>
+            {{ $t('next.playNextList') }}
+            <button @click="clearPlayNextList()">{{ $t('next.clearPlayNextList') }}</button>
         </h1>
         <TrackList
             v-show="playNextList.length > 0"

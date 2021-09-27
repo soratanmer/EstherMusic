@@ -110,6 +110,7 @@
         "pause": "Pause",
         "mute": "Mute",
         "nextUp": "Next up",
+        "history": "History",
         "audioSourceFormKuWo": "Audio source from KuWo"
     },
     "modal": {
@@ -259,5 +260,9 @@
     "dailyTracks": {
         "title": "Song of the day",
         "subtitle": "Generated to your musical tastes - updated daily at 6:00"
+    },
+    "history": {
+        "text": "History",
+        "describe": "The 100 most recently played songs."
     }
 }

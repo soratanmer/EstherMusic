@@ -20,6 +20,7 @@ const saveToLocalStorage = initLocalStorage([
     'settings',
     'toast',
     'dailyTracks',
+    'user',
 ])
 
 let plugins = [saveToLocalStorage]
