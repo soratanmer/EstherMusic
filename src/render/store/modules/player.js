@@ -431,6 +431,7 @@ const actions = {
         if (state.isPersonalFM || isFM === true) {
             commit('setIsPersonalFM', true)
             commit('setPersonalFMTrack', state.personalFMNextTrack)
+            commit('setPlaylistSource', { type: 'album', id: state.personalFMTrack.album.id })
             dispatch('replaceCurrentTrack', { id: state.personalFMTrack.id })
             dispatch('loadPersonalFMNextTrack')
             return true
@@ -553,6 +554,7 @@ const actions = {
         if (!state.enabled) {
             commit('setEnabled', true)
         }
+        commit('setPlaylistSource', { type: 'album', id: state.personalFMTrack.album.id })
         if (state.currentTrack.id !== state.personalFMTrack.id) {
             dispatch('replaceCurrentTrack', { id: state.personalFMTrack.id }).then(() => dispatch('playOrPause'))
         } else {

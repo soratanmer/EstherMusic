@@ -1,6 +1,7 @@
 <template>
     <div class="fm" data-theme="dark">
-        <img :src="proxy.$filters.resizeImage(albumPic)" />
+        <img class="fm-background" :src="proxy.$filters.resizeImage(albumPic)" />
+        <img class="cover" :src="proxy.$filters.resizeImage(albumPic, 512)" @click="goToAlbum" />
         <div class="container">
             <div class="info">
                 <div class="title">{{ personalFMTrack.name }}</div>
@@ -113,18 +114,26 @@
         display: flex;
         height: 198px;
         box-sizing: border-box;
-        cursor: pointer;
         position: relative;
         overflow: hidden;
     }
-    img {
+    .fm-background {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        animation: move 60s infinite;
-        animation-direction: alternate;
         z-index: -1;
+        filter: blur(25px);
+        opacity: 0.75;
+    }
+
+    .cover {
+        height: 100%;
+        clip-path: border-box;
+        border-radius: 0.75rem;
+        margin-right: 1.2rem;
+        cursor: pointer;
+        user-select: none;
     }
     .container {
         display: flex;
@@ -182,15 +191,6 @@
                     margin-right: 6px;
                 }
             }
-        }
-    }
-
-    @keyframes move {
-        0% {
-            transform: translateY(0);
-        }
-        100% {
-            transform: translateY(-50%);
         }
     }
 </style>
