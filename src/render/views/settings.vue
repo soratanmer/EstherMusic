@@ -809,9 +809,9 @@
                     .replace('Down', '↓')
                     .replace('Right', '→')
                     .replace('Left', '←')
-                if (settings.value.lang === 'zh-CN') {
+                if (settings.value.lang === 'zh-CHS') {
                     shortcut = shortcut.replace('Space', '空格')
-                } else if (settings.value.lang === 'zh-TW') {
+                } else if (settings.value.lang === 'zh-CHT') {
                     shortcut = shortcut.replace('Space', '空白鍵')
                 }
                 if (process.platform === 'darwin') {
