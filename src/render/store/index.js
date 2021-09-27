@@ -39,7 +39,7 @@ const options = {
 const store = createStore(options)
 
 if ([undefined, null].includes(store.state.settings.lang)) {
-    const defaultLang = 'en'
+    const defaultLang = 'zh-CHS'
     const langMapper = new Map().set('zh-CHS', 'zh-CHS').set('zh-CHT', 'zh-CHT').set('en-GB', 'en-GB')
     store.state.settings.lang = langMapper.get(navigator.language.slice(0, 2)) || defaultLang
     localStorage.setItem('settings', JSON.stringify(store.state.settings))
