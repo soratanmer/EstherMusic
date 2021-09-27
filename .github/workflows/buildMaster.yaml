@@ -1,9 +1,10 @@
-name: Esther Release Action
+name: Esther Build Master Action
 
 on:
     push:
-        tags:
-            - v*
+        branches: [master]
+    pull_request:
+        branches: [master]
 
 jobs:
     build-windows:
@@ -33,26 +34,16 @@ jobs:
             - name: artifact setup
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-win-setup-release
+                  name: EstherMusic-win-setup-master
                   path: release/**/*setup*.exe
                   if-no-files-found: ignore
 
             - name: artifact portable
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-win-portable-release
+                  name: EstherMusic-win-portable-master
                   path: release/**/*.7z
                   if-no-files-found: ignore
-
-            - name: release
-              uses: softprops/action-gh-release@v1
-              if: startsWith(github.ref, 'refs/tags/')
-              with:
-                  files: |
-                      release/**/EstherMusic *.exe
-                      release/**/*.7z
-              env:
-                  GITHUB_TOKEN: ${{ secrets.ESTHERMUSIC }}
 
     build-MacOS:
         runs-on: macos-10.15
@@ -81,29 +72,20 @@ jobs:
             - name: artifact x64
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-mac-x64-release
+                  name: EstherMusic-mac-x64-master
                   path: release/**/*-x64.dmg
                   if-no-files-found: ignore
 
             - name: artifact arm64
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-mac-arm64-release
+                  name: EstherMusic-mac-arm64-master
                   path: release/**/*-arm64.dmg
                   if-no-files-found: ignore
 
             - name: artifact universal
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-mac-universal-release
+                  name: EstherMusic-mac-universal-master
                   path: release/**/*-universal.dmg
                   if-no-files-found: ignore
-
-            - name: release
-              uses: softprops/action-gh-release@v1
-              if: startsWith(github.ref, 'refs/tags/')
-              with:
-                  files: |
-                      release/**/*.dmg
-              env:
-                  GITHUB_TOKEN: ${{ secrets.ESTHERMUSIC }}

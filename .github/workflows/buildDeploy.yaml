@@ -1,10 +1,10 @@
-name: Esther Build Action
+name: Esther Build Deploy Action
 
 on:
     push:
-        branches: [master]
+        branches: [deploy]
     pull_request:
-        branches: [master]
+        branches: [deploy]
 
 jobs:
     build-windows:
@@ -34,14 +34,14 @@ jobs:
             - name: artifact setup
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-win-setup
+                  name: EstherMusic-win-setup-deploy
                   path: release/**/*setup*.exe
                   if-no-files-found: ignore
 
             - name: artifact portable
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-win-portable
+                  name: EstherMusic-win-portable-deploy
                   path: release/**/*.7z
                   if-no-files-found: ignore
 
@@ -72,50 +72,20 @@ jobs:
             - name: artifact x64
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-mac-x64
+                  name: EstherMusic-mac-x64-deploy
                   path: release/**/*-x64.dmg
                   if-no-files-found: ignore
 
             - name: artifact arm64
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-mac-arm64
+                  name: EstherMusic-mac-arm64-deploy
                   path: release/**/*-arm64.dmg
                   if-no-files-found: ignore
 
             - name: artifact universal
               uses: actions/upload-artifact@v2
               with:
-                  name: EstherMusic-mac-universal
+                  name: EstherMusic-mac-universal-deploy
                   path: release/**/*-universal.dmg
                   if-no-files-found: ignore
-
-    # build-Linux:
-    #     runs-on: ubuntu-20.04
-
-    #     steps:
-    #         - name: Check out Git repository
-    #           uses: actions/checkout@v2
-
-    #         - name: Install Node.js, NPM and Yarn
-    #           uses: actions/setup-node@v1
-    #           with:
-    #               node-version: 14.16.0
-
-    #         - name: Install Packages
-    #           run: |
-    #               npm install
-
-    #         - name: Build
-    #           run: |
-    #               npm run build
-    #           env:
-    #               VITE_APP_ELECTRON_API_URL: /api
-    #               VITE_APP_ELECTRON_API_URL_DEV: http://127.0.0.1:10754
-    #               GH_TOKEN: ${{ secrets.ESTHERMUSIC }}
-
-    #         - uses: actions/upload-artifact@v2
-    #           with:
-    #               name: EstherMusic-linux
-    #               path: release/**/*.AppImage
-    #               if-no-files-found: ignore
