@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import 'vite-plugin-svg-icons/register'
 import isElectron from 'is-electron'
 import NProgress from 'nprogress'
+import { registerSW } from 'virtual:pwa-register'
 
 import App from '@render/App.vue'
 import router from '@render/router'
@@ -35,6 +36,13 @@ const app = createApp(App)
 
 if (isElectron()) {
     ipcRenderer(app)
+}
+
+if (!isElectron()) {
+    registerSW({
+        onNeedRefresh() {},
+        onOfflineReady() {},
+    })
 }
 
 NProgress.configure({ showSpinner: false, trickleSpeed: 100 })

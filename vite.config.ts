@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import viteSvgIcons from 'vite-plugin-svg-icons'
 import vueI18n from '@intlify/vite-plugin-vue-i18n'
+import { VitePWA } from 'vite-plugin-pwa'
 import dotenv from 'dotenv'
 
 try {
@@ -87,6 +88,78 @@ export default defineConfig({
 
             // you need to set i18n resource including paths !
             include: join(__dirname, 'src/render/locale/**'),
+        }),
+        VitePWA({
+            includeAssets: ['favicon.ico', 'robots.txt', 'logos/apple-touch-icon.png'],
+            registerType: 'autoUpdate',
+            manifest: {
+                name: 'Esther Music',
+                short_name: 'Esther Music',
+                description: 'A third party music player for Netease Music.',
+                background_color: '#335eea',
+                theme_color: '#ffffff00',
+                display: 'standalone',
+                icons: [
+                    {
+                        src: '/logos/16x16.png',
+                        sizes: '16x16',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                    {
+                        src: '/logos/24x24.png',
+                        sizes: '24x24',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                    {
+                        src: '/logos/32x32.png',
+                        sizes: '32x32',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                    {
+                        src: '/logos/48x48.png',
+                        sizes: '48x48',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                    {
+                        src: '/logos/64x64.png',
+                        sizes: '64x64',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                    {
+                        src: '/logos/128x128.png',
+                        sizes: '128x128',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                    {
+                        src: '/logos/256x256.png',
+                        sizes: '256x256',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                    {
+                        src: '/logos/512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                    {
+                        src: '/logos/1024x1024.png',
+                        sizes: '1024x1024',
+                        type: 'image/png',
+                        purpose: 'any',
+                    },
+                ],
+            },
+            workbox: {
+                skipWaiting: true,
+                clientsClaim: true,
+            },
         }),
     ],
 })
