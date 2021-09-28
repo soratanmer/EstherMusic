@@ -71,6 +71,14 @@
                 <div class="blank" />
                 <div class="container" @click.stop>
                     <button-icon
+                        :title="$t('player.history')"
+                        :class="{
+                            active: route.name === 'history',
+                        }"
+                        @click="goToHistoryPage"
+                        ><svg-icon icon-name="history"
+                    /></button-icon>
+                    <button-icon
                         :title="$t('player.nextUp')"
                         :class="{
                             active: route.name === 'next',
@@ -78,15 +86,6 @@
                         }"
                         @click="goToNextTracksPage"
                         ><svg-icon icon-name="list"
-                    /></button-icon>
-                    <button-icon
-                        :title="$t('player.history')"
-                        :class="{
-                            active: route.name === 'history',
-                            disabled: player.isPersonalFM,
-                        }"
-                        @click="goToHistoryPage"
-                        ><svg-icon icon-name="history"
                     /></button-icon>
                     <button-icon
                         :class="{
@@ -253,9 +252,6 @@
             }
 
             const goToHistoryPage = () => {
-                if (player.value.isPersonalFM) {
-                    return
-                }
                 route.name === 'history'
                     ? router.go(-1)
                     : router.push({
