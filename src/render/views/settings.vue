@@ -568,7 +568,7 @@
             const musicQuality = computed({
                 get() {
                     if (settings.value.musicQuality === undefined) {
-                        return 320000
+                        return 128000
                     }
                     return settings.value.musicQuality
                 },

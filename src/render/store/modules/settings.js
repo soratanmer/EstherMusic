@@ -10,7 +10,7 @@ const state = {
     lang: null,
     musicLanguage: 'all',
     appearance: 'auto',
-    musicQuality: 320000,
+    musicQuality: 128000,
     lyricFontSize: 28,
     outputDevice: 'default',
     showPlaylistsByAppleMusic: true,
