@@ -26,7 +26,7 @@ export function isTrackPlayable(track) {
     } else if (track.noCopyrightRcmd !== null && track.noCopyrightRcmd !== undefined) {
         result.playable = false
         result.reason = '无版权'
-    } else if (track.privilege?.st < 0 && isAccountLoggedIn()) {
+    } else if (track.st === -1 && track.privilege?.st === -200) {
         result.playable = false
         result.reason = '已下架'
     }
